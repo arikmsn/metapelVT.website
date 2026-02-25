@@ -51,7 +51,7 @@ export default function Faq() {
         <div className="mt-12 text-center">
           <p className="text-primary/70 mb-4">{heContent.faq.contactText}</p>
           <a
-            href="mailto:TODO"
+            href="info@metapel.online"
             className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-lg transition-colors duration-200"
           >
             {heContent.faq.cta}

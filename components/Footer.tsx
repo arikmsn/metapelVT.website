@@ -22,7 +22,7 @@ export default function Footer() {
               {heContent.footer.termsLabel}
             </a>
             <a
-              href="mailto:TODO"
+              href="info@metapel.online"
               className="text-white/60 hover:text-white text-sm transition-colors duration-200"
             >
               {heContent.footer.contactLabel}
