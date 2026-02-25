@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -32,6 +36,7 @@ export default function RootLayout({
     <html lang="he" dir="rtl">
       <head>
         <link rel="canonical" href="https://www.metapel.online/" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       </head>
       <body className="antialiased">
         {children}
