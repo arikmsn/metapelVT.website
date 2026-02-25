@@ -238,6 +238,6 @@ export const heContent = {
   footer: {
     brandName: "מטפל אונליין",
     termsLabel: "תנאי שימוש",
-    contactLabel: "צור קשר",
+    contactLabel: "הצטרפות לפיילוט חינם",
   },
 };

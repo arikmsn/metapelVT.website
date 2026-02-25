@@ -13,18 +13,12 @@ export default function Hero() {
             <p className="text-base sm:text-lg md:text-xl text-primary/80 mb-6 lg:mb-8 leading-relaxed max-w-xl mx-auto lg:mr-0">
               {heContent.hero.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <a
                 href="https://app.metapel.online"
-                className="inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3 text-sm sm:text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-lg transition-colors duration-200 min-h-[48px]"
+                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium text-white bg-accent hover:bg-accent-dark rounded-lg transition-colors duration-200 min-h-[48px]"
               >
                 {heContent.hero.primaryCta}
-              </a>
-              <a
-                href="#faq"
-                className="inline-flex items-center justify-center px-5 py-3 sm:px-6 sm:py-3 text-sm sm:text-base font-medium text-primary border-2 border-primary hover:bg-primary hover:text-white rounded-lg transition-colors duration-200 min-h-[48px]"
-              >
-                {heContent.hero.secondaryCta}
               </a>
             </div>
           </div>
