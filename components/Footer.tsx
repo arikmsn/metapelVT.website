@@ -1,3 +1,5 @@
+import { heContent } from "@/content/he";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -9,7 +11,7 @@ export default function Footer() {
             <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
               <span className="text-white font-bold text-sm">מ</span>
             </div>
-            <span className="text-white/80 font-medium">Metapel</span>
+            <span className="text-white/80 font-medium">{heContent.footer.brandName}</span>
           </div>
 
           <div className="flex items-center gap-6">
@@ -17,18 +19,18 @@ export default function Footer() {
               href="#"
               className="text-white/60 hover:text-white text-sm transition-colors duration-200"
             >
-              תנאי שימוש
+              {heContent.footer.termsLabel}
             </a>
             <a
               href="mailto:TODO"
               className="text-white/60 hover:text-white text-sm transition-colors duration-200"
             >
-              צור קשר
+              {heContent.footer.contactLabel}
             </a>
           </div>
 
           <p className="text-white/40 text-sm">
-            © {currentYear} Metapel. כל הזכויות שמורות.
+            © {currentYear} {heContent.footer.brandName}. כל הזכויות שמורות.
           </p>
         </div>
       </div>

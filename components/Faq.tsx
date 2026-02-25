@@ -1,29 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const faqItems = [
-  {
-    question: "האם אפשר להתחיל בלי להתחייב?",
-    answer: "כן, בהחלט. אנחנו מציעים תקופת פיילוט חינמית כדי שתוכלו להתנסות במערכת ולראות איך היא מתאימה לעבודה שלכם. אין התחייבות, ואפשר לעזוב בכל רגע.",
-  },
-  {
-    question: "האם המערכת מחליפה טיפול אנושי?",
-    answer: "לא ולא. Metapel היא כלי עזר למטפל, לא תחליף. היא עוזרת לנהל את הקליניקה בצורה מסודרת יותר, אבל כל ההחלטות הטיפוליות נשארות בידיים שלכם.",
-  },
-  {
-    question: "האם אפשר לעבוד בעברית?",
-    answer: "כן, הממשק כולו בעברית, כולל הסיכומים והתוכן שהמערכת מייצרת. המערכת מותאמת במיוחד לעבודה עם מטפלים ישראלים.",
-  },
-  {
-    question: "מה קורה אחרי תקופת הפיילוט?",
-    answer: "אחרי תקופת הפיילוט תוכלו לבחור במסלול תשלום פשוט שמתאים לכם. גם אם תחליטו שזה לא מתאים – אפשר לעזוב בכל רגע, בלי קנסות או התחייבויות.",
-  },
-  {
-    question: "איך המידע מאובטח?",
-    answer: "אנחנו משתמשים בהצפנה מתקדמת ושרתים מאובטחים. המידע נשמר בהתאם לסטנדרטים של רשויות הפרטיות, ואפשר למחוק אותו בכל רגע.",
-  },
-];
+import { heContent } from "@/content/he";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -32,11 +10,11 @@ export default function Faq() {
     <section id="faq" className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-12">
-          שאלות נפוצות
+          {heContent.faq.title}
         </h2>
 
         <div className="max-w-2xl mx-auto space-y-3">
-          {faqItems.map((item, index) => (
+          {heContent.faq.items.map((item, index) => (
             <div
               key={index}
               className="border border-gray-200 rounded-lg overflow-hidden"
@@ -71,12 +49,12 @@ export default function Faq() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-primary/70 mb-4">עוד שאלות? היו שמחים לשמוע</p>
+          <p className="text-primary/70 mb-4">{heContent.faq.contactText}</p>
           <a
             href="mailto:TODO"
             className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-lg transition-colors duration-200"
           >
-            צור קשר
+            {heContent.faq.cta}
           </a>
         </div>
       </div>

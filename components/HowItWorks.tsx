@@ -1,27 +1,11 @@
-const steps = [
-  {
-    number: 1,
-    title: "יוצרים חשבון",
-    description: "מגדירים כמה פרטים על הקליניקה והתחילו לעבוד",
-  },
-  {
-    number: 2,
-    title: "מזינים אחרי כל פגישה",
-    description: "כמה נקודות חשובות או תמלול קצר של הסשן",
-  },
-  {
-    number: 3,
-    title: "Metapel עובדת בשבילכם",
-    description: "מסכמת, שומרת ומזכירה לכם מה חשוב לפגישה הבאה",
-  },
-];
+import { heContent } from "@/content/he";
 
 export default function HowItWorks() {
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-12">
-          איך זה עובד בפועל?
+          {heContent.howItWorks.title}
         </h2>
 
         <div className="max-w-4xl mx-auto">
@@ -31,10 +15,10 @@ export default function HowItWorks() {
             <div className="hidden md:block absolute top-8 left-16 w-8 h-0.5 bg-accent/20" />
 
             <div className="grid md:grid-cols-3 gap-8">
-              {steps.map((step, index) => (
+              {heContent.howItWorks.steps.map((step, index) => (
                 <div key={index} className="relative text-center">
                   <div className="w-16 h-16 rounded-full bg-accent text-white flex items-center justify-center mx-auto mb-4 text-2xl font-bold relative z-10">
-                    {step.number}
+                    {index + 1}
                   </div>
                   <h3 className="text-lg font-semibold text-primary mb-2">{step.title}</h3>
                   <p className="text-sm text-primary/70">{step.description}</p>
@@ -48,7 +32,7 @@ export default function HowItWorks() {
               href="#faq"
               className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary hover:bg-primary-light rounded-lg transition-colors duration-200"
             >
-              להתחיל עכשיו
+              {heContent.howItWorks.cta}
               <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
