@@ -29,7 +29,7 @@ export default function HowItWorks() {
 
           <div className="mt-10 sm:mt-12 text-center">
             <a
-              href="#faq"
+              href="https://app.metapel.online/"
               className="inline-flex items-center justify-center px-5 sm:px-6 py-3 text-sm sm:text-base font-medium text-white bg-primary hover:bg-primary-light rounded-lg transition-colors duration-200 min-h-[48px]"
             >
               {heContent.howItWorks.cta}

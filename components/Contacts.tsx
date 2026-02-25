@@ -11,8 +11,7 @@ export default function Contacts() {
               ניהול מטופלים וקשרים
             </h2>
             <p className="text-sm sm:text-base text-primary/80 mb-6 sm:mb-8 leading-relaxed">
-              כל המטופלים, המתאמנים או הקבוצות במקום אחד. 
-              פרטים, היסטוריה, סיכומים ומשימות – הכל מרוכז ונגיש.
+              כל המטופלים, המתאמנים או הקבוצות במקום אחד. פרטים, היסטוריה, סיכומים ומשימות, הכל מרוכז בצורה ברורה ונגישה.
             </p>
 
             <div className="space-y-3 sm:space-y-4">
