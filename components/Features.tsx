@@ -24,8 +24,8 @@ export default function Features() {
           {heContent.features.title}
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <div className="flex-1 space-y-6">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+          <div className="w-full lg:w-[45%] max-w-[480px] space-y-6">
             {heContent.features.items.map((feature, index) => (
               <div key={index} className="flex gap-4">
                 <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0 text-white">
@@ -39,11 +39,11 @@ export default function Features() {
             ))}
           </div>
 
-          <div className="flex-1 w-full max-w-lg">
+          <div className="w-full lg:w-[55%]">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
               <Image
-                src="/screenshots/notes.png"
-                alt="מסך סיכומים והערות במטפל אונליין"
+                src="/screenshots/ai-plan.png"
+                alt="מסך תכנון פגישה במטפל אונליין – AI Plan"
                 width={800}
                 height={500}
                 className="w-full h-auto"
