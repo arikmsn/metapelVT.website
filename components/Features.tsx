@@ -18,22 +18,22 @@ const icons = [
 
 export default function Features() {
   return (
-    <section className="py-16 md:py-20 bg-background">
+    <section className="py-12 md:py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center mb-8 md:mb-12">
           {heContent.features.title}
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-          <div className="w-full lg:w-[45%] max-w-[480px] space-y-6">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center">
+          <div className="w-full lg:w-[45%] max-w-[420px] space-y-4 sm:space-y-5">
             {heContent.features.items.map((feature, index) => (
-              <div key={index} className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0 text-white">
+              <div key={index} className="flex gap-3 sm:gap-4">
+                <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0 text-white">
                   {icons[index]}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-primary mb-1">{feature.title}</h3>
-                  <p className="text-sm text-primary/70">{feature.description}</p>
+                  <h3 className="font-semibold text-primary mb-0.5 sm:mb-1 text-sm sm:text-base">{feature.title}</h3>
+                  <p className="text-xs sm:text-sm text-primary/70">{feature.description}</p>
                 </div>
               </div>
             ))}

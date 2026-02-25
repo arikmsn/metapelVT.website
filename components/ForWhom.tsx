@@ -14,21 +14,21 @@ const icons = [
 
 export default function ForWhom() {
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-12 md:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center mb-8 md:mb-12">
           {heContent.forWhom.title}
         </h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
           {heContent.forWhom.items.map((item, index) => (
             <div
               key={index}
-              className="bg-background rounded-xl p-6 text-center border border-gray-100 hover:border-accent/30 transition-colors duration-200"
+              className="bg-background rounded-xl p-5 sm:p-6 text-center border border-gray-100 hover:border-accent/30 transition-colors duration-200"
             >
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4 text-accent">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-3 sm:mb-4 text-accent">
                 {icons[index]}
               </div>
-              <h3 className="text-lg font-semibold text-primary mb-2">{item.title}</h3>
+              <h3 className="text-base sm:text-lg font-semibold text-primary mb-2">{item.title}</h3>
               <p className="text-sm text-primary/70">{item.description}</p>
             </div>
           ))}
