@@ -6,7 +6,6 @@ import AiFeatures from "@/components/AiFeatures";
 import AiSummary from "@/components/AiSummary";
 import Messages from "@/components/Messages";
 import Contacts from "@/components/Contacts";
-import HowItWorks from "@/components/HowItWorks";
 import SocialProof from "@/components/SocialProof";
 import Security from "@/components/Security";
 import Faq from "@/components/Faq";
@@ -23,7 +22,6 @@ export default function Home() {
       <AiSummary />
       <Messages />
       <Contacts />
-      <HowItWorks />
       <SocialProof />
       <Security />
       <Faq />
