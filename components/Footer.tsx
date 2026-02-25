@@ -1,4 +1,5 @@
 import { heContent } from "@/content/he";
+import { TermsModal } from "@/components/TermsModal";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,12 +16,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6 order-1 sm:order-2">
-            <a
-              href="#"
-              className="text-white/60 hover:text-white text-xs sm:text-sm transition-colors duration-200"
-            >
-              {heContent.footer.termsLabel}
-            </a>
+            <TermsModal />
             <a
               href="mailto:info@metapel.online"
               className="text-white/60 hover:text-white text-xs sm:text-sm transition-colors duration-200"
