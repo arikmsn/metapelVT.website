@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import ForWhom from "@/components/ForWhom";
+import HowItWorksSimple from "@/components/HowItWorksSimple";
 import Features from "@/components/Features";
 import AiFeatures from "@/components/AiFeatures";
 import AiSummary from "@/components/AiSummary";
@@ -16,6 +17,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <ForWhom />
+      <HowItWorksSimple />
       <Features />
       <AiFeatures />
       <AiSummary />
