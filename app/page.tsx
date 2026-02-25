@@ -1,6 +1,10 @@
 import Hero from "@/components/Hero";
 import ForWhom from "@/components/ForWhom";
 import Features from "@/components/Features";
+import AiFeatures from "@/components/AiFeatures";
+import AiSummary from "@/components/AiSummary";
+import Messages from "@/components/Messages";
+import Contacts from "@/components/Contacts";
 import HowItWorks from "@/components/HowItWorks";
 import SocialProof from "@/components/SocialProof";
 import Security from "@/components/Security";
@@ -13,6 +17,10 @@ export default function Home() {
       <Hero />
       <ForWhom />
       <Features />
+      <AiFeatures />
+      <AiSummary />
+      <Messages />
+      <Contacts />
       <HowItWorks />
       <SocialProof />
       <Security />
