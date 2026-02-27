@@ -8,11 +8,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-14 md:h-16">
           <Link href="/" className="flex items-center py-1">
             <Image
-              src="/Brand/Full-Logo.png"
+              src="/Brand/Logo.png"
               alt="מטפל אונליין – ניהול חכם למטפלים מבוסס AI"
-              width={100}
-              height={32}
-              className="h-6 w-auto md:h-8 md:w-auto"
+              height={40}
+              width={160}
+              style={{ height: 'auto', width: 'auto' }}
               priority
             />
           </Link>
