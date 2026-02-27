@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "מטפל אונליין – העוזר החכם למטפלים ולמלווי תהליכים",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       </head>
       <body className="antialiased">
+        <Header />
         {children}
       </body>
     </html>
