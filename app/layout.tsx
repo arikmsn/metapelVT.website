@@ -105,8 +105,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/icon.svg",
+    icon: "/Brand/LogoSignV1.png",
+    apple: "/Brand/LogoSignV1.png",
   },
 };
 
@@ -119,7 +119,7 @@ export default function RootLayout({
     <html lang="he" dir="rtl">
       <head>
         <link rel="canonical" href="https://www.metapel.online/" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" type="image/png" href="/Brand/LogoSignV1.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: softwareAppSchema }}
