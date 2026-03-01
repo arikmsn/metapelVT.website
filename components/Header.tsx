@@ -8,7 +8,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-14 md:h-16">
           <Link href="/" className="flex items-center py-1">
             <Image
-              src="/Brand/Logo.png"
+              src="/Brand/Full-Logo-V1.png"
               alt="מטפל אונליין – ניהול חכם למטפלים מבוסס AI"
               height={40}
               width={160}
