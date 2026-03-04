@@ -32,15 +32,9 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="https://app.metapel.online"
-              className="text-sm font-semibold text-primary hover:text-secondary transition-colors"
-            >
-              כניסה למערכת
-            </a>
-            <a
-              href="https://app.metapel.online"
               className="btn-primary text-sm px-5 py-2.5"
             >
-              התחל פיילוט חינם
+              כניסה למערכת
             </a>
           </div>
 
@@ -69,15 +63,9 @@ export default function Header() {
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
                 <a
                   href="https://app.metapel.online"
-                  className="text-base font-semibold text-primary hover:text-secondary transition-colors"
-                >
-                  כניסה למערכת
-                </a>
-                <a
-                  href="https://app.metapel.online"
                   className="btn-primary text-center text-base"
                 >
-                  התחל פיילוט חינם
+                  כניסה למערכת
                 </a>
               </div>
             </nav>

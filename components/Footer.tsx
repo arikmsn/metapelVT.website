@@ -21,7 +21,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/70 max-w-sm leading-relaxed">
-              המערכת החכמה לניהול קליניקה וליווי מטופלים. כל התהליך הטיפולי במקום אחד.
+              מערכת חכמה לניהול וליווי מטופלים. כל התהליך הטיפולי במקום אחד.
             </p>
           </div>
           
@@ -41,11 +41,6 @@ export default function Footer() {
               <li>
                 <a href="mailto:info@metapel.online" className="text-white/60 hover:text-white transition-colors">
                   info@metapel.online
-                </a>
-              </li>
-              <li>
-                <a href="https://app.metapel.online" className="text-white/60 hover:text-white transition-colors">
-                  כניסה למערכת
                 </a>
               </li>
             </ul>

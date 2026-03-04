@@ -26,22 +26,11 @@ export default function Hero() {
                 {heContent.hero.primaryCta}
               </a>
               <a
-                href="#how-it-works"
+                href="mailto:info@metapel.online"
                 className="btn-secondary text-lg px-8 py-4 min-h-[56px]"
               >
                 {heContent.hero.secondaryCta}
               </a>
-            </div>
-            
-            <div className="flex items-center justify-center lg:justify-start gap-6 mt-10 animate-fade-up delay-300">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-dark border-2 border-white" />
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-primary border-2 border-white" />
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent-warm to-orange-400 border-2 border-white" />
-                </div>
-                <span className="text-sm text-text-secondary mr-2">מטפלים משתמשים</span>
-              </div>
             </div>
           </div>
 
@@ -67,8 +56,7 @@ export default function Hero() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-primary">AI מבוסס</p>
-                    <p className="text-xs text-text-muted">סיכומים חכמים</p>
+                    <p className="text-sm font-semibold text-primary">מבוסס בינה מלאכותית</p>
                   </div>
                 </div>
               </div>
