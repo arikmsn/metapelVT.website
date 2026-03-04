@@ -7,25 +7,30 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-16 md:py-20 lg:py-24 bg-white">
+    <section id="faq" className="section-padding bg-surface">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center mb-10 md:mb-14">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4">
           {heContent.faq.title}
         </h2>
+        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12">
+          תשובות לשאלות נפוצות על המערכת
+        </p>
 
-        <div className="max-w-2xl mx-auto space-y-3">
+        <div className="max-w-2xl mx-auto space-y-4">
           {heContent.faq.items.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden"
+              className={`border border-border rounded-xl overflow-hidden transition-all duration-300 ${
+                openIndex === index ? "bg-white shadow-md border-accent/30" : "bg-white hover:border-primary/10"
+              }`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-4 sm:p-5 text-right bg-background hover:bg-gray-50 transition-colors duration-200"
+                className="w-full flex items-center justify-between p-5 md:p-6 text-right"
               >
-                <span className="font-medium text-sm sm:text-base text-primary">{item.question}</span>
+                <span className="font-semibold text-base md:text-lg text-primary">{item.question}</span>
                 <svg
-                  className={`w-5 h-5 text-primary/60 flex-shrink-0 transition-transform duration-200 ${
+                  className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                   fill="none"
@@ -36,11 +41,11 @@ export default function Faq() {
                 </svg>
               </button>
               <div
-                className={`overflow-hidden transition-all duration-200 ${
-                  openIndex === index ? "max-h-48" : "max-h-0"
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="p-4 sm:p-5 text-sm text-primary/80 leading-relaxed border-t border-gray-100">
+                <p className="px-5 md:px-6 pb-5 md:pb-6 text-text-secondary leading-relaxed border-t border-border/50">
                   {item.answer}
                 </p>
               </div>
@@ -49,10 +54,10 @@ export default function Faq() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-primary/70 mb-4 text-sm sm:text-base">{heContent.faq.contactText}</p>
+          <p className="text-text-secondary mb-5">{heContent.faq.contactText}</p>
           <a
             href="mailto:info@metapel.online"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm sm:text-base font-medium text-white bg-accent hover:bg-accent-dark rounded-lg transition-colors duration-200 min-h-[48px]"
+            className="btn-primary"
           >
             {heContent.faq.cta}
           </a>

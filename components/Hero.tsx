@@ -3,36 +3,75 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background py-12 md:py-16 lg:py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-20 lg:py-24">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-gradient-to-br from-accent/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-gradient-to-tl from-secondary/5 to-transparent rounded-full blur-3xl" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <div className="flex-1 text-center lg:text-right order-1 lg:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight mb-5 lg:mb-6">
+            <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-6 lg:mb-8 animate-fade-up">
               {heContent.hero.title}
             </h1>
-            <p className="text-lg sm:text-xl md:text-xl text-primary/80 mb-7 lg:mb-8 leading-relaxed max-w-xl mx-auto lg:mr-0">
+            <p className="text-lg sm:text-xl md:text-xl text-text-secondary mb-8 lg:mb-10 leading-relaxed max-w-xl mx-auto lg:mr-0 animate-fade-up delay-100">
               {heContent.hero.subtitle}
             </p>
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up delay-200">
               <a
                 href="https://app.metapel.online"
-                className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium text-white bg-accent hover:bg-accent-dark rounded-lg transition-colors duration-200 min-h-[48px]"
+                className="btn-primary text-lg px-8 py-4 min-h-[56px]"
               >
                 {heContent.hero.primaryCta}
               </a>
+              <a
+                href="#how-it-works"
+                className="btn-secondary text-lg px-8 py-4 min-h-[56px]"
+              >
+                {heContent.hero.secondaryCta}
+              </a>
+            </div>
+            
+            <div className="flex items-center justify-center lg:justify-start gap-6 mt-10 animate-fade-up delay-300">
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent to-accent-dark border-2 border-white" />
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-primary border-2 border-white" />
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent-warm to-orange-400 border-2 border-white" />
+                </div>
+                <span className="text-sm text-text-secondary mr-2">מטפלים משתמשים</span>
+              </div>
             </div>
           </div>
 
-          <div className="flex-1 w-full max-w-md lg:max-w-xl order-2 lg:order-2 mt-8 lg:mt-0">
-            <div className="relative rounded-xl shadow-xl overflow-hidden border border-gray-200">
-              <Image
-                src="/screenshots/dashboard.png"
-                alt="מסך ראשי של מטפל אונליין – דשבורד תהליכים"
-                width={800}
-                height={500}
-                className="w-full h-auto"
-                priority
-              />
+          <div className="flex-1 w-full max-w-md lg:max-w-xl order-2 lg:order-2 mt-6 lg:mt-0 animate-scale-in">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl blur-2xl opacity-50" />
+              <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-border bg-surface">
+                <Image
+                  src="/screenshots/dashboard.png"
+                  alt="מסך ראשי של מטפל אונליין"
+                  width={800}
+                  height={500}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4 bg-surface rounded-xl shadow-lg p-3 border border-border animate-fade-up delay-300">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-primary">AI מבוסס</p>
+                    <p className="text-xs text-text-muted">סיכומים חכמים</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

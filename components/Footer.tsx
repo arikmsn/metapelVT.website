@@ -1,31 +1,63 @@
 import { heContent } from "@/content/he";
 import { TermsModal } from "@/components/TermsModal";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary py-6 sm:py-8">
+    <footer className="bg-primary pt-12 pb-8">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
-          <div className="flex items-center gap-3 order-2 sm:order-1">
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
-              <span className="text-white font-bold text-sm">מ</span>
-            </div>
-            <span className="text-white/80 font-medium text-sm sm:text-base">{heContent.footer.brandName}</span>
+        <div className="grid md:grid-cols-4 gap-8 mb-10">
+          <div className="md:col-span-2">
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/Brand/Full-Logo-V1.png"
+                alt="מטפל אונליין"
+                width={140}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
+            <p className="text-white/70 max-w-sm leading-relaxed">
+              המערכת החכמה לניהול קליניקה וליווי מטופלים. כל התהליך הטיפולי במקום אחד.
+            </p>
           </div>
-
-          <div className="flex items-center gap-4 sm:gap-6 order-1 sm:order-2">
+          
+          <div>
+            <h4 className="text-white font-semibold mb-4">ניווט</h4>
+            <ul className="space-y-3">
+              <li><a href="#features" className="text-white/60 hover:text-white transition-colors">תכונות</a></li>
+              <li><a href="#how-it-works" className="text-white/60 hover:text-white transition-colors">איך זה עובד</a></li>
+              <li><a href="#testimonials" className="text-white/60 hover:text-white transition-colors">המלצות</a></li>
+              <li><a href="#faq" className="text-white/60 hover:text-white transition-colors">שאלות נפוצות</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-white font-semibold mb-4">צור קשר</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="mailto:info@metapel.online" className="text-white/60 hover:text-white transition-colors">
+                  info@metapel.online
+                </a>
+              </li>
+              <li>
+                <a href="https://app.metapel.online" className="text-white/60 hover:text-white transition-colors">
+                  כניסה למערכת
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
             <TermsModal />
-            <a
-              href="mailto:info@metapel.online"
-              className="text-white/60 hover:text-white text-xs sm:text-sm transition-colors duration-200"
-            >
-              {heContent.footer.contactLabel}
-            </a>
           </div>
 
-          <p className="text-white/40 text-xs sm:text-sm order-3">
+          <p className="text-white/40 text-sm">
             © {currentYear} {heContent.footer.brandName}. כל הזכויות שמורות.
           </p>
         </div>
