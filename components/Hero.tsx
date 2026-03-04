@@ -1,5 +1,3 @@
-"use client";
-
 import { heContent } from "@/content/he";
 import Image from "next/image";
 
@@ -14,6 +12,12 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           <div className="flex-1 text-center lg:text-right order-1 lg:order-1">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 text-white text-sm px-3 py-1 rounded-full mb-4">
+              <svg className="w-4 h-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              מבוסס בינה מלאכותית
+            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5 lg:mb-8 animate-fade-up">
               {heContent.hero.title}
             </h1>
@@ -38,7 +42,7 @@ export default function Hero() {
 
           <div className="flex-1 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl order-2 lg:order-2 mt-4 lg:mt-0 animate-scale-in">
             <div className="relative">
-              <div className="hero-screenshot rounded-xl overflow-hidden">
+              <div className="hero-screenshot rounded-xl overflow-hidden border border-white/20">
                 <Image
                   src="/screenshots/dashboard.png"
                   alt="מסך ראשי של מטפל אונליין"
@@ -50,19 +54,6 @@ export default function Hero() {
               </div>
               
               <div className="hidden md:block absolute -bottom-10 left-1/2 -translate-x-1/2 w-3/4 h-10 bg-gradient-to-b from-white/10 to-transparent blur-xl" />
-              
-              <div className="absolute -bottom-3 sm:-bottom-4 left-1/2 -translate-x-1/2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-xl shadow-lg p-2.5 sm:p-3 animate-fade-up delay-300">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <div className="w-8 sm:w-10 rounded-full bg-teal-400/20 flex items-center justify-center">
-                    <svg className="w-4 h-4 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm font-semibold text-white">מבוסס בינה מלאכותית</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

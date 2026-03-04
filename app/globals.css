@@ -118,8 +118,8 @@ h1, h2, h3, h4, h5, h6 {
   
   @media (min-width: 768px) {
     .hero-screenshot {
-      transform: perspective(1200px) rotateY(8deg) rotateX(2deg);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1);
+      transform: perspective(1000px) rotateY(10deg) rotateX(3deg) scale(1.02);
+      box-shadow: -20px 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.15);
     }
   }
 }
