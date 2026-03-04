@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-teal-800 py-12 md:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-teal-800 pt-16 md:pt-20 pb-12 md:py-20 lg:py-24">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-gradient-to-br from-teal-500/10 to-transparent rounded-full blur-3xl" />
         <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-gradient-to-tl from-purple-500/10 to-transparent rounded-full blur-3xl" />
