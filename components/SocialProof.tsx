@@ -43,9 +43,16 @@ export default function SocialProof() {
                 {heContent.socialProof.testimonials[currentIndex].text}
               </p>
             </div>
-            <p className="text-white/70 font-medium text-center">
-              {heContent.socialProof.testimonials[currentIndex].role}
-            </p>
+            
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                {heContent.socialProof.testimonials[currentIndex].initial}
+              </div>
+              <div className="text-right">
+                <div className="text-white font-semibold text-base">{heContent.socialProof.testimonials[currentIndex].name}</div>
+                <div className="text-white/65 text-sm">{heContent.socialProof.testimonials[currentIndex].title}</div>
+              </div>
+            </div>
             
             <button
               onClick={prevTestimonial}
