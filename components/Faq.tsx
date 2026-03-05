@@ -20,7 +20,7 @@ export default function Faq() {
           {heContent.faq.items.map((item, index) => (
             <div
               key={index}
-              className={`border border-border rounded-xl overflow-hidden transition-all duration-300 animate-on-scroll delay-${Math.min(index + 1, 3)} ${
+              className={`border border-border rounded-xl overflow-hidden transition-all duration-300 ${
                 openIndex === index ? "bg-white shadow-md border-accent/30" : "bg-white hover:border-primary/10"
               }`}
             >
