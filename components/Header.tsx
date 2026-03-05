@@ -69,13 +69,13 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-white/20 animate-fade-up">
+          <div className="md:hidden py-4 border-t border-gray-100 animate-fade-up bg-white">
             <nav className="flex flex-col gap-4">
-              <a href="#features" className="text-base font-medium text-white/90 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>תכונות</a>
-              <a href="#how-it-works" className="text-base font-medium text-white/90 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>איך זה עובד</a>
-              <a href="#testimonials" className="text-base font-medium text-white/90 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>המלצות</a>
-              <a href="#faq" className="text-base font-medium text-white/90 hover:text-white transition-colors" onClick={() => setIsMenuOpen(false)}>שאלות</a>
-              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/20">
+              <a href="#features" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>תכונות</a>
+              <a href="#how-it-works" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>איך זה עובד</a>
+              <a href="#testimonials" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>המלצות</a>
+              <a href="#faq" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>שאלות</a>
+              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-100">
                 <a
                   href="https://app.metapel.online"
                   className="bg-teal-400 text-indigo-950 font-semibold text-center text-base py-3 rounded-lg hover:bg-teal-300 transition-colors"
