@@ -58,7 +58,7 @@ export default function FeatureTabs() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="features-tabs" className="section-padding bg-white">
+    <section id="features-tabs" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4">
           מה המערכת עושה בשבילך?
@@ -67,75 +67,77 @@ export default function FeatureTabs() {
           לחצו על כל יכולת לפרטים
         </p>
 
-        <div className="flex flex-col lg:flex-row gap-8 items-start">
-          <div className="w-full lg:w-2/5 flex flex-col gap-2">
-            {tabs.map((tab, index) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(index)}
-                className={`w-full text-right p-4 rounded-xl border transition-all group ${
-                  activeTab === index
-                    ? "border-teal-200 bg-teal-50"
-                    : "border-transparent hover:border-gray-200 hover:bg-gray-50"
-                }`}
-              >
-                <div className="flex items-center gap-3 justify-start">
-                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                    activeTab === index ? "bg-teal-100 text-teal-600" : "bg-gray-100 text-gray-500"
-                  }`}>
-                    {tab.icon}
-                  </div>
-                  <span className={`font-semibold ${activeTab === index ? "text-primary" : "text-gray-700 group-hover:text-primary"}`}>
-                    {tab.title}
-                  </span>
-                </div>
-                <p className={`text-sm mt-1 text-right ${activeTab === index ? "text-gray-600" : "text-gray-500"}`}>
-                  {tab.shortDesc}
-                </p>
-              </button>
-            ))}
-          </div>
-
-          <div className="w-full lg:w-3/5">
-            <div className="relative">
-              <div className="w-full min-h-[420px] flex items-center justify-center">
-                <div className="browser-frame">
-                  <div className="browser-bar">
-                    <div className="browser-dots">
-                      <span></span>
-                      <span></span>
-                      <span></span>
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 lg:p-8">
+          <div className="flex flex-col lg:flex-row gap-8 items-center">
+            <div className="w-full lg:w-2/5 flex flex-col gap-2">
+              {tabs.map((tab, index) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(index)}
+                  className={`w-full text-right p-4 rounded-xl border transition-all group ${
+                    activeTab === index
+                      ? "border-teal-200 bg-teal-50"
+                      : "border-transparent hover:border-gray-200 hover:bg-gray-50"
+                  }`}
+                >
+                  <div className="flex items-center gap-3 justify-start">
+                    <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                      activeTab === index ? "bg-teal-100 text-teal-600" : "bg-gray-100 text-gray-500"
+                    }`}>
+                      {tab.icon}
                     </div>
-                    <div className="browser-url">app.metapel.online</div>
+                    <span className={`font-semibold ${activeTab === index ? "text-primary" : "text-gray-700 group-hover:text-primary"}`}>
+                      {tab.title}
+                    </span>
                   </div>
-                  <div className="browser-content">
-                    {tabs.map((tab, index) => (
-                      <div
-                        key={tab.id}
-                        className={`transition-all duration-250 ${
-                          activeTab === index
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 absolute top-0 -translate-y-2 pointer-events-none"
-                        }`}
-                      >
-                        <Image
-                          src={tab.screenshot}
-                          alt={tab.title}
-                          width={800}
-                          height={500}
-                          className="w-full object-contain max-h-[400px]"
-                        />
+                  <p className={`text-sm mt-1 text-right ${activeTab === index ? "text-gray-600" : "text-gray-500"}`}>
+                    {tab.shortDesc}
+                  </p>
+                </button>
+              ))}
+            </div>
+
+            <div className="w-full lg:w-3/5">
+              <div className="relative">
+                <div className="w-full min-h-[340px] flex items-center justify-center">
+                  <div className="browser-frame">
+                    <div className="browser-bar">
+                      <div className="browser-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                       </div>
-                    ))}
+                      <div className="browser-url">app.metapel.online</div>
+                    </div>
+                    <div className="browser-content">
+                      {tabs.map((tab, index) => (
+                        <div
+                          key={tab.id}
+                          className={`transition-all duration-250 ${
+                            activeTab === index
+                              ? "opacity-100 translate-y-0"
+                              : "opacity-0 absolute top-0 -translate-y-2 pointer-events-none"
+                          }`}
+                        >
+                          <Image
+                            src={tab.screenshot}
+                            alt={tab.title}
+                            width={800}
+                            height={500}
+                            className={`w-full max-w-[480px] mx-auto object-contain ${index === 0 ? "scale-[1.08]" : ""}`}
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-6 p-4 bg-gray-50 rounded-xl lg:hidden">
-              <p className="text-text-secondary leading-relaxed">
-                {tabs[activeTab].description}
-              </p>
+              <div className="mt-6 p-4 bg-gray-50 rounded-xl lg:hidden">
+                <p className="text-text-secondary leading-relaxed">
+                  {tabs[activeTab].description}
+                </p>
+              </div>
             </div>
           </div>
         </div>
