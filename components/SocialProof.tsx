@@ -56,7 +56,7 @@ export default function SocialProof() {
             
             <button
               onClick={prevTestimonial}
-              className="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-colors"
               aria-label="קודם"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +65,7 @@ export default function SocialProof() {
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute top-1/2 left-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute top-1/2 left-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-colors"
               aria-label="הבא"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
