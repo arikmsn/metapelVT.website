@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import ScrollAnimation from "@/components/ScrollAnimation";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const softwareAppSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -134,14 +134,23 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: organizationSchema }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-J8232FZW1X"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-J8232FZW1X');
+          `}
+        </Script>
       </head>
       <body className="antialiased">
         <ScrollAnimation />
         <Header />
         {children}
-        {process.env.NODE_ENV === "production" && (
-          <GoogleAnalytics gaId="G-J8232FZW1X" />
-        )}
       </body>
     </html>
   );
