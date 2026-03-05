@@ -124,7 +124,7 @@ export default function FeatureTabs() {
                             alt={tab.title}
                             width={800}
                             height={500}
-                            className={`w-full max-w-[480px] mx-auto object-contain ${index === 0 ? "scale-[1.08]" : ""}`}
+                            className={`w-full max-w-[480px] mx-auto object-contain ${index === 0 ? "max-h-[440px]" : ""}`}
                           />
                         </div>
                       ))}
