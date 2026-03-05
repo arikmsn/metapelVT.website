@@ -53,25 +53,6 @@ export default function SocialProof() {
                 <div className="text-white/65 text-sm">{heContent.socialProof.testimonials[currentIndex].title}</div>
               </div>
             </div>
-            
-            <button
-              onClick={prevTestimonial}
-              className="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-colors"
-              aria-label="קודם"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button
-              onClick={nextTestimonial}
-              className="absolute top-1/2 left-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white hidden md:flex items-center justify-center transition-colors"
-              aria-label="הבא"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
           </div>
           
           <div className="flex justify-center gap-2 mt-6">
