@@ -50,15 +50,24 @@ export default function AiSummary() {
 
           <div className="w-full lg:w-1/2">
             <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-border bg-surface">
-                <Image
-                  src="/screenshots/ai-summary.png"
-                  alt="סיכומים חכמים"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
-                />
+              <div className="browser-frame">
+                <div className="browser-bar">
+                  <div className="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="browser-url">app.metapel.online</div>
+                </div>
+                <div className="browser-content">
+                  <Image
+                    src="/screenshots/ai-summary.png"
+                    alt="סיכומים חכמים"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>

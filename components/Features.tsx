@@ -31,7 +31,7 @@ export default function Features() {
           <div className="w-full lg:w-[45%] space-y-6 animate-on-scroll">
             {heContent.features.items.map((feature, index) => (
               <div key={index} className="flex gap-4 p-4 rounded-xl hover:bg-surface hover:shadow-md transition-all border border-transparent hover:border-border group">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center flex-shrink-0 text-white group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center flex-shrink-0 text-white feature-icon">
                   {icons[index]}
                 </div>
                 <div>
@@ -44,15 +44,24 @@ export default function Features() {
 
           <div className="w-full lg:w-[55%]">
             <div className="relative group animate-on-scroll">
-              <div className="absolute -inset-2 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-border bg-surface">
-                <Image
-                  src="/screenshots/ai-plan.png"
-                  alt="מסך תכנון פגישה במטפל אונליין"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
-                />
+              <div className="browser-frame">
+                <div className="browser-bar">
+                  <div className="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="browser-url">app.metapel.online</div>
+                </div>
+                <div className="browser-content">
+                  <Image
+                    src="/screenshots/ai-plan.png"
+                    alt="מסך תכנון פגישה במטפל אונליין"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>

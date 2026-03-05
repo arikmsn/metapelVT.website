@@ -26,9 +26,9 @@ export default function ForWhom() {
           {heContent.forWhom.items.map((item, index) => (
             <div
               key={index}
-              className={`card group hover:-translate-y-1 animate-on-scroll delay-${index + 1}`}
+              className={`card card-hover group animate-on-scroll delay-${index + 1}`}
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/10 to-secondary/10 flex items-center justify-center mx-auto mb-5 text-accent group-hover:from-accent/20 group-hover:to-secondary/20 transition-all">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/10 to-secondary/10 flex items-center justify-center mx-auto mb-5 text-accent card-icon">
                 {icons[index]}
               </div>
               <h3 className="text-xl font-semibold text-primary mb-3 text-center">{item.title}</h3>

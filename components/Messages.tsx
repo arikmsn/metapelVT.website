@@ -8,15 +8,24 @@ export default function Messages() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
             <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-secondary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-border bg-surface">
-                <Image
-                  src="/screenshots/messages.png"
-                  alt="תקשורת מסודרת עם מטופלים"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto"
-                />
+              <div className="browser-frame">
+                <div className="browser-bar">
+                  <div className="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div className="browser-url">app.metapel.online</div>
+                </div>
+                <div className="browser-content">
+                  <Image
+                    src="/screenshots/messages.png"
+                    alt="תקשורת מסודרת עם מטופלים"
+                    width={800}
+                    height={500}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -37,7 +46,7 @@ export default function Messages() {
 
             <div className="space-y-4">
               <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-background transition-colors">
-                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 feature-icon">
                   <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -45,7 +54,7 @@ export default function Messages() {
                 <p className="text-text-secondary">כל התקשורת במקום אחד מאובטח</p>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-background transition-colors">
-                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 feature-icon">
                   <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -53,7 +62,7 @@ export default function Messages() {
                 <p className="text-text-secondary">אפשרות לשליחת הודעות מתוך המערכת</p>
               </div>
               <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-background transition-colors">
-                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 feature-icon">
                   <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
