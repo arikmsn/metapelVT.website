@@ -29,7 +29,7 @@ export default function Security() {
               key={index}
               className={`card card-hover text-center group animate-on-scroll delay-${index + 1}`}
             >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mx-auto mb-5 text-primary card-icon">
+              <div className="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center mx-auto mb-5 text-teal-600 card-icon">
                 {icons[index]}
               </div>
               <h3 className="text-lg font-semibold text-primary mb-3">{point.title}</h3>
