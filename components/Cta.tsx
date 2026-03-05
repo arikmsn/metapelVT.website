@@ -13,10 +13,10 @@ export default function Cta() {
           הצטרפו למטפלים שכבר עובדים בצורה מסודרת יותר
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/login" className="bg-teal-400 text-indigo-950 font-bold px-8 py-4 rounded-full text-lg hover:bg-teal-300 transition-colors">
+          <a href="https://app.metapel.online/" className="bg-teal-400 text-indigo-950 font-bold px-8 py-4 rounded-full text-lg hover:bg-teal-300 transition-colors">
             כניסה למערכת
           </a>
-          <a href="/login" className="bg-white/10 border border-white/30 text-white font-medium px-8 py-4 rounded-full text-lg hover:bg-white/20 transition-colors">
+          <a href="https://app.metapel.online/" className="bg-white/10 border border-white/30 text-white font-medium px-8 py-4 rounded-full text-lg hover:bg-white/20 transition-colors">
             הצטרפות לפיילוט חינם
           </a>
         </div>
