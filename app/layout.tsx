@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const softwareAppSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -138,6 +139,9 @@ export default function RootLayout({
         <ScrollAnimation />
         <Header />
         {children}
+        {process.env.NODE_ENV === "production" && (
+          <GoogleAnalytics gaId="G-J8232FZW1X" />
+        )}
       </body>
     </html>
   );
