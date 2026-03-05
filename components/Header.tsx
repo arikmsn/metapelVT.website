@@ -18,10 +18,9 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" 
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 relative ${scrolled 
+        ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" 
+        : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -69,21 +68,17 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 animate-fade-up bg-white">
-            <nav className="flex flex-col gap-4">
-              <a href="#features" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>תכונות</a>
-              <a href="#how-it-works" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>איך זה עובד</a>
-              <a href="#testimonials" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>המלצות</a>
-              <a href="#faq" className="text-base font-medium text-primary hover:text-accent transition-colors" onClick={() => setIsMenuOpen(false)}>שאלות</a>
-              <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-100">
-                <a
-                  href="https://app.metapel.online"
-                  className="bg-teal-400 text-indigo-950 font-semibold text-center text-base py-3 rounded-lg hover:bg-teal-300 transition-colors"
-                >
-                  כניסה למערכת
-                </a>
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50">
+            <div className="container mx-auto px-6 py-6 flex flex-col gap-2">
+              <a href="#features" className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">תכונות</a>
+              <a href="#how-it-works" className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">איך זה עובד</a>
+              <a href="#testimonials" className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">המלצות</a>
+              <a href="#faq" className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">שאלות</a>
+              <div className="flex flex-col gap-3 pt-4">
+                <a href="https://app.metapel.online/" className="bg-teal-500 text-white font-semibold text-center text-base py-3 rounded-xl hover:bg-teal-400 transition-colors">כניסה למערכת</a>
+                <a href="https://app.metapel.online/" className="border border-teal-500 text-teal-600 font-semibold text-center text-base py-3 rounded-xl hover:bg-teal-50 transition-colors">הצטרפות לפיילוט חינם</a>
               </div>
-            </nav>
+            </div>
           </div>
         )}
       </div>
