@@ -72,6 +72,7 @@ export default function FeatureTabs() {
             {tabs.map((tab, index) => (
               <button
                 key={tab.id}
+                dir="rtl"
                 onClick={() => setActiveTab(index)}
                 className={`w-full text-right p-4 rounded-xl border transition-all group ${
                   activeTab === index
@@ -79,17 +80,17 @@ export default function FeatureTabs() {
                     : "border-transparent hover:border-gray-200 hover:bg-gray-50"
                 }`}
               >
-                <div className="flex items-center gap-3 justify-end">
-                  <span className={`font-semibold ${activeTab === index ? "text-primary" : "text-gray-700 group-hover:text-primary"}`}>
-                    {tab.title}
-                  </span>
+                <div className="flex items-center gap-3 flex-row-reverse justify-start">
                   <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${
                     activeTab === index ? "bg-teal-100 text-teal-600" : "bg-gray-100 text-gray-500"
                   }`}>
                     {tab.icon}
                   </div>
+                  <span className={`font-semibold ${activeTab === index ? "text-primary" : "text-gray-700 group-hover:text-primary"}`}>
+                    {tab.title}
+                  </span>
                 </div>
-                <p className={`text-sm mt-1 pr-12 ${activeTab === index ? "text-gray-600" : "text-gray-500"}`}>
+                <p className={`text-sm mt-1 pl-0 text-right ${activeTab === index ? "text-gray-600" : "text-gray-500"}`}>
                   {tab.shortDesc}
                 </p>
               </button>
