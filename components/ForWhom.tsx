@@ -16,17 +16,17 @@ export default function ForWhom() {
   return (
     <section id="features" className="section-padding bg-surface">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4 animate-on-scroll">
           {heContent.forWhom.title}
         </h2>
-        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12">
+        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12 animate-on-scroll delay-1">
           המערכת מתאימה לכל סוגי אנשי המקצוע שמלווים אנשים בתהליך
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {heContent.forWhom.items.map((item, index) => (
             <div
               key={index}
-              className="card group hover:-translate-y-1"
+              className={`card group hover:-translate-y-1 animate-on-scroll delay-${index + 1}`}
             >
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/10 to-secondary/10 flex items-center justify-center mx-auto mb-5 text-accent group-hover:from-accent/20 group-hover:to-secondary/20 transition-all">
                 {icons[index]}

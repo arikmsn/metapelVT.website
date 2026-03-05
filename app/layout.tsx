@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 const softwareAppSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -26,10 +27,10 @@ const faqSchema = JSON.stringify({
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "זה מתאים רק לקליניקות?",
+      "name": "למי מתאימה המערכת?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "לא. מטפל אונליין מתאים למטפלים פרטיים, לקליניקות, לקואצ'רים, למנחים ויועצים – לכל מי שמלווה אנשים בתהליך לאורך זמן."
+        "text": "מטפל אונליין מתאימה למטפלים, לקואצ'רים, למנחים ויועצים, לכל מי שמלווה אנשים בתהליך לאורך זמן וזקוק למערכת תומכת בפעילות יום יומית."
       }
     },
     {
@@ -61,7 +62,7 @@ const faqSchema = JSON.stringify({
       "name": "מה קורה אחרי תקופת הפיילוט?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "אם מתאים לך להמשיך, בוחרים מסלול חודשי פשוט לפי היקף העבודה. אם לא – מפסיקים בלי התחייבות, וניתן למחוק את כל המידע מהמערכת."
+        "text": "בוחרים מסלול בתשלום חודשי באופן פשוט, ברור ומשתלם. אם לא, מפסיקים בלי התחייבות, וניתן למחוק את כל המידע מהמערכת."
       }
     },
     {
@@ -134,6 +135,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <ScrollAnimation />
         <Header />
         {children}
       </body>

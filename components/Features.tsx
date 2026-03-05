@@ -20,15 +20,15 @@ export default function Features() {
   return (
     <section className="section-padding bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4 animate-on-scroll">
           {heContent.features.title}
         </h2>
-        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12">
+        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12 animate-on-scroll delay-1">
           כל הכלים שאתה צריך כדי לנהל את הקליניקה שלך בצורה מקצועית
         </p>
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
-          <div className="w-full lg:w-[45%] space-y-6">
+          <div className="w-full lg:w-[45%] space-y-6 animate-on-scroll">
             {heContent.features.items.map((feature, index) => (
               <div key={index} className="flex gap-4 p-4 rounded-xl hover:bg-surface hover:shadow-md transition-all border border-transparent hover:border-border group">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center flex-shrink-0 text-white group-hover:scale-110 transition-transform">
@@ -43,7 +43,7 @@ export default function Features() {
           </div>
 
           <div className="w-full lg:w-[55%]">
-            <div className="relative group">
+            <div className="relative group animate-on-scroll">
               <div className="absolute -inset-2 bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative rounded-2xl shadow-2xl overflow-hidden border border-border bg-surface">
                 <Image

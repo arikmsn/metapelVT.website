@@ -9,10 +9,10 @@ export default function Faq() {
   return (
     <section id="faq" className="section-padding bg-surface">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4 animate-on-scroll">
           {heContent.faq.title}
         </h2>
-        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12">
+        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12 animate-on-scroll delay-1">
           תשובות לשאלות נפוצות על המערכת
         </p>
 
@@ -20,7 +20,7 @@ export default function Faq() {
           {heContent.faq.items.map((item, index) => (
             <div
               key={index}
-              className={`border border-border rounded-xl overflow-hidden transition-all duration-300 ${
+              className={`border border-border rounded-xl overflow-hidden transition-all duration-300 animate-on-scroll delay-${Math.min(index + 1, 3)} ${
                 openIndex === index ? "bg-white shadow-md border-accent/30" : "bg-white hover:border-primary/10"
               }`}
             >
@@ -53,7 +53,7 @@ export default function Faq() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center animate-on-scroll delay-2">
           <p className="text-text-secondary mb-5">{heContent.faq.contactText}</p>
           <a
             href="mailto:info@metapel.online"

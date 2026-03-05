@@ -16,10 +16,10 @@ export default function Security() {
   return (
     <section className="section-padding bg-background-alt">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4 animate-on-scroll">
           {heContent.security.title}
         </h2>
-        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12">
+        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12 animate-on-scroll delay-1">
           {heContent.security.subtitle}
         </p>
 
@@ -27,7 +27,7 @@ export default function Security() {
           {heContent.security.items.map((point, index) => (
             <div
               key={index}
-              className="card text-center group"
+              className={`card text-center group animate-on-scroll delay-${index + 1}`}
             >
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mx-auto mb-5 text-primary group-hover:from-primary/20 group-hover:to-secondary/20 transition-all">
                 {icons[index]}

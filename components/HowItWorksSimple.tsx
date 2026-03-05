@@ -34,10 +34,10 @@ export default function HowItWorksSimple() {
   return (
     <section id="how-it-works" className="section-padding bg-gradient-to-br from-primary/5 via-background to-secondary/5">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4 animate-on-scroll">
           איך זה עובד בפשטות?
         </h2>
-        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12">
+        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12 animate-on-scroll delay-1">
           שלושה צעדים פשוטים כדי להתחיל לעבוד בצורה מסודרת יותר
         </p>
 
@@ -47,7 +47,7 @@ export default function HowItWorksSimple() {
             
             <div className="space-y-8">
               {steps.map((step, index) => (
-                <div key={index} className="relative flex sm:gap-8 items-start">
+                <div key={index} className={`relative flex sm:gap-8 items-start animate-on-scroll delay-${index + 1}`}>
                   <div className="flex-shrink-0 flex flex-col items-center sm:block z-10">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-accent to-accent-dark text-white flex items-center justify-center text-xl sm:text-2xl font-bold shadow-lg shadow-accent/25 mb-3 sm:mb-0 group-hover:scale-110 transition-transform">
                       {index + 1}
