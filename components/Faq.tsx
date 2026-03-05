@@ -52,16 +52,6 @@ export default function Faq() {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center animate-on-scroll delay-2">
-          <p className="text-text-secondary mb-5">{heContent.faq.contactText}</p>
-          <a
-            href="mailto:info@metapel.online"
-            className="btn-primary"
-          >
-            {heContent.faq.cta}
-          </a>
-        </div>
       </div>
     </section>
   );
