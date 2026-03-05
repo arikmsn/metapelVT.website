@@ -39,7 +39,7 @@ export default function Header() {
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>תכונות</a>
+            <a href="#features-tabs" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>תכונות</a>
             <a href="#how-it-works" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>איך זה עובד</a>
             <a href="#testimonials" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>המלצות</a>
             <a href="#faq" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>שאלות</a>
@@ -73,7 +73,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-2">
-            <a href="#features" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">תכונות</a>
+            <a href="#features-tabs" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">תכונות</a>
             <a href="#how-it-works" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">איך זה עובד</a>
             <a href="#testimonials" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">המלצות</a>
             <a href="#faq" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">שאלות</a>
