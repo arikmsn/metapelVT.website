@@ -175,6 +175,11 @@ export default function ContactForm() {
           type="submit"
           disabled={status === "loading"}
           className="submit-btn"
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              (window as unknown as { gtagSendEvent?: (target: string) => void }).gtagSendEvent?.("#thank-you");
+            }
+          }}
         >
           {status === "loading" ? "שולח..." : "שליחה"}
         </button>

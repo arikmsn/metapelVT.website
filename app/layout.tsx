@@ -144,6 +144,20 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-J8232FZW1X');
+            function gtagSendEvent(target) {
+              var callback = function() {
+                if (target) window.location.hash = target;
+              };
+              gtag('event', 'lead_submitted', {
+                'event_callback': callback,
+                'event_timeout': 2000,
+                'value': 100,
+                'currency': 'ILS',
+                'lead_source': 'Metapel Online (web)',
+                'form_id': 'contact-form'
+              });
+              return false;
+            }
           `}
         </Script>
       </head>
