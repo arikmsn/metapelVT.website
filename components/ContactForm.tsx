@@ -1,7 +1,7 @@
 export default function ContactForm() {
   const zohoFormHtml = `
-<div class="contact-form-wrapper" dir="rtl" style="max-width: 500px; margin: 40px auto 0; padding: 32px; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
-  <h3 style="margin: 0 0 24px 0; font-size: 24px; font-weight: 700; color: #1f2937; text-align: center; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;">יצירת קשר</h3>
+<div class="contact-form-wrapper" dir="rtl" style="max-width: 65%; margin: 48px auto 0; padding: 48px; background: white; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
+  <h3 style="margin: 0 0 36px 0; font-size: 28px; font-weight: 700; color: #1f2937; text-align: center; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;">יצירת קשר</h3>
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>
   <style>
@@ -12,46 +12,72 @@ export default function ContactForm() {
     .contact-form-wrapper .wf_customClose::after,.contact-form-wrapper .wf_customClose::before{content: '';display: block;box-sizing: border-box;position: absolute;width: 12px;height: 1.5px;background: #616E88;transform: rotate(45deg);border-radius: 5px;top: 8px;left}
     .contact-form-wrapper .wf_customClose::after{transform: rotate(-45deg)}
     
-    /* RTL Overrides */
+    /* RTL & Layout */
     .contact-form-wrapper{direction: rtl !important; text-align: right !important;}
     .contact-form-wrapper *{direction: rtl !important;}
     .contact-form-wrapper #crmWebToEntityForm{text-align: right !important;}
     .contact-form-wrapper #crmWebToEntityForm *{direction: rtl !important;}
     .contact-form-wrapper .zcwf_lblLeft .zcwf_title{display: none !important;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_row{margin: 16px 0; display: flex; flex-direction: column;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_lab{width: 100% !important; float: none !important; margin: 0 0 8px 0; padding: 0 !important; text-align: right;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_lab label{font-size: 14px; font-weight: 600; color: #374151; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;}
+    
+    /* Field Layout - Stacked */
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_row{margin: 24px 0; display: flex; flex-direction: column;}
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_lab{width: 100% !important; float: none !important; margin: 0 0 10px 0; padding: 0 !important; text-align: right;}
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_lab label{font-size: 15px; font-weight: 600; color: #374151; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;}
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld{width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important;}
+    
+    /* Modern Input Styles */
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=text],
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=email],
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea{width: 100% !important; float: none !important; border: 1px solid #e5e7eb !important; border-radius: 10px !important; padding: 14px 16px !important; font-size: 15px !important; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif !important; background: #f9fafb !important; transition: all 0.2s ease !important; box-sizing: border-box !important;}
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea{
+      width: 100% !important; 
+      float: none !important; 
+      border: 1px solid #d1d5db !important; 
+      border-radius: 12px !important; 
+      padding: 16px 18px !important; 
+      font-size: 16px !important; 
+      font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif !important; 
+      background: #fff !important; 
+      transition: all 0.2s ease !important; 
+      box-sizing: border-box !important;
+      color: #1f2937 !important;
+    }
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=text]::placeholder,
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=email]::placeholder,
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea::placeholder{
+      color: #9ca3af !important;
+    }
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=text]:focus,
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=email]:focus,
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea:focus{outline: none !important; border-color: #0d9488 !important; box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important; background: #fff !important;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea{min-height: 120px; resize: vertical;}
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea:focus{
+      outline: none !important; 
+      border-color: #0d9488 !important; 
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important;
+    }
+    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea{min-height: 140px; resize: vertical;}
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_help{display: none !important;}
     
-    /* Submit Button */
+    /* Submit Button - Match CTA */
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld .formsubmit.zcwf_button{
       width: 100% !important;
       max-width: 100% !important;
-      padding: 16px 24px !important;
-      font-size: 16px !important;
+      padding: 18px 32px !important;
+      font-size: 18px !important;
       font-weight: 700 !important;
       font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif !important;
       background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%) !important;
       color: white !important;
       border: none !important;
-      border-radius: 12px !important;
+      border-radius: 50px !important;
       cursor: pointer !important;
       transition: all 0.3s ease !important;
       text-align: center !important;
-      margin-top: 8px !important;
+      margin-top: 16px !important;
+      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25) !important;
     }
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld .formsubmit.zcwf_button:hover{
       background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%) !important;
       transform: translateY(-2px) !important;
-      box-shadow: 0 8px 20px rgba(13, 148, 136, 0.35) !important;
+      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.35) !important;
     }
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld .formsubmit.zcwf_button:disabled{
       background: #9ca3af !important;
@@ -60,12 +86,20 @@ export default function ContactForm() {
       box-shadow: none !important;
     }
     
-    /* Hide reset button */
+    /* Hide reset and hidden fields */
     .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=reset]{display: none !important;}
     .contact-form-wrapper .wfrm_fld_dpNn{display: none !important;}
     
-    @media (max-width: 640px) {
-      .contact-form-wrapper{padding: 24px !important; margin: 32px 16px 0 !important;}
+    /* Responsive */
+    @media (max-width: 768px) {
+      .contact-form-wrapper{
+        max-width: 90% !important;
+        padding: 32px 24px !important;
+        margin: 32px 16px 0 !important;
+        border-radius: 20px !important;
+      }
+      .contact-form-wrapper h3{font-size: 24px !important; margin-bottom: 28px !important;}
+      .contact-form-wrapper .zcwf_lblLeft .zcwf_row{margin: 20px 0 !important;}
     }
   </style>
   <div class='wf_customMessageBox' id='wf_splash' style='display:none'>
@@ -79,16 +113,16 @@ export default function ContactForm() {
     <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
     <input type='text' style='display:none;' name='returnURL' value='null'>
     <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Last_Name'>שם מלא<span style='color:red;'> *</span></label></div>
-      <div class='zcwf_col_fld'><input type='text' id='contact-full-name' aria-required='true' aria-label='שם מלא' name='Last Name' aria-valuemax='80' maxlength='80' placeholder='השם המלא שלך'></div>
+      <div class='zcwf_col_lab'><label for='Last_Name'>שם מלא <span style='color:red;'>*</span></label></div>
+      <div class='zcwf_col_fld'><input type='text' id='contact-full-name' aria-required='true' aria-label='שם מלא' name='Last Name' aria-valuemax='80' maxlength='80'></div>
     </div>
     <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Email'>דוא"ל<span style='color:red;'> *</span></label></div>
-      <div class='zcwf_col_fld'><input type='text' ftype='email' autocomplete='false' id='Email' aria-required='true' aria-label='דוא"ל' name='Email' aria-valuemax='100' crmlabel='' maxlength='100' placeholder='האימייל שלך'></div>
+      <div class='zcwf_col_lab'><label for='Email'>דוא"ל <span style='color:red;'>*</span></label></div>
+      <div class='zcwf_col_fld'><input type='text' ftype='email' autocomplete='false' id='Email' aria-required='true' aria-label='דוא"ל' name='Email' aria-valuemax='100' crmlabel='' maxlength='100'></div>
     </div>
     <div class='zcwf_row'>
       <div class='zcwf_col_lab'><label for='Phone'>טלפון</label></div>
-      <div class='zcwf_col_fld'><input type='text' id='Phone' aria-required='false' aria-label='טלפון' name='Phone' aria-valuemax='30' maxlength='30' placeholder='מספר הטלפון שלך'></div>
+      <div class='zcwf_col_fld'><input type='text' id='Phone' aria-required='false' aria-label='טלפון' name='Phone' aria-valuemax='30' maxlength='30'></div>
     </div>
     <div class='zcwf_row wfrm_fld_dpNn'>
       <div class='zcwf_col_lab'><label for='Lead_Source'>Lead Source</label></div>
@@ -118,7 +152,7 @@ export default function ContactForm() {
     </div>
     <div class='zcwf_row'>
       <div class='zcwf_col_lab'><label for='Description'>הודעה</label></div>
-      <div class='zcwf_col_fld'><textarea style='font-family: Arial, sans-serif;' aria-multiline='true' id='Description' aria-required='false' aria-label='הודעה' name='Description' placeholder='איך נוכל לעזור לך?'></textarea></div>
+      <div class='zcwf_col_fld'><textarea aria-multiline='true' id='Description' aria-required='false' aria-label='הודעה' name='Description'></textarea></div>
     </div>
     <input type='text' type='hidden' style='display: none;' name='aG9uZXlwb3Q' value='' />
     <div class='zcwf_row'>
