@@ -2,8 +2,18 @@
 
 import ContactForm from "@/components/ContactForm";
 
+const trackEvent = (name: string, params?: Record<string, unknown>) => {
+  if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+    (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", name, params);
+  }
+};
+
 export default function Cta() {
   const scrollToContact = () => {
+    trackEvent("cta_click", {
+      event_category: "contact",
+      event_label: "pilot_cta",
+    });
     const form = document.getElementById("pilot-contact");
     form?.scrollIntoView({ behavior: "smooth", block: "center" });
     setTimeout(() => {

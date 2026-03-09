@@ -2,6 +2,12 @@
 
 import { useState, useRef } from "react";
 
+const trackEvent = (name: string, params?: Record<string, unknown>) => {
+  if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+    (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", name, params);
+  }
+};
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     full_name: "",
@@ -27,6 +33,11 @@ export default function ContactForm() {
       if (response.ok) {
         setStatus("success");
         setFormData({ full_name: "", email: "", phone: "" });
+        trackEvent("lead_submitted", {
+          event_category: "contact",
+          event_label: "pilot_contact_form",
+          value: 1,
+        });
       } else {
         setStatus("error");
       }

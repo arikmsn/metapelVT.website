@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const trackEvent = (name: string, params?: Record<string, unknown>) => {
+  if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+    (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", name, params);
+  }
+};
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +25,10 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   const scrollToPilotForm = () => {
+    trackEvent("cta_click", {
+      event_category: "contact",
+      event_label: "pilot_cta",
+    });
     const form = document.getElementById("pilot-contact");
     form?.scrollIntoView({ behavior: "smooth", block: "center" });
     setTimeout(() => {
