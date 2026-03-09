@@ -64,41 +64,32 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="contact-form-wrapper" dir="rtl">
       <div className="form-row">
-        <div className="form-field">
-          <label htmlFor="full_name">שם מלא</label>
-          <input
-            type="text"
-            id="full_name"
-            name="full_name"
-            value={formData.full_name}
-            onChange={handleChange}
-            required
-            placeholder=""
-          />
-        </div>
-        <div className="form-field">
-          <label htmlFor="email">אימייל</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder=""
-          />
-        </div>
-        <div className="form-field">
-          <label htmlFor="phone">טלפון</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder=""
-          />
-        </div>
+        <input
+          type="text"
+          name="full_name"
+          value={formData.full_name}
+          onChange={handleChange}
+          required
+          placeholder="שם מלא"
+          className="form-input"
+        />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          placeholder="אימייל"
+          className="form-input"
+        />
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="טלפון"
+          className="form-input"
+        />
         <button
           type="submit"
           disabled={status === "loading"}
@@ -115,51 +106,43 @@ export default function ContactForm() {
         .contact-form-wrapper {
           max-width: 65%;
           margin: 48px auto 0;
-          padding: 48px;
+          padding: 40px 48px;
           background: white;
           border-radius: 24px;
           box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
         .form-row {
           display: flex;
-          gap: 16px;
-          align-items: flex-end;
+          gap: 12px;
+          align-items: stretch;
         }
-        .form-field {
+        .form-input {
           flex: 1;
-          display: flex;
-          flex-direction: column;
-        }
-        .form-field label {
-          font-size: 15px;
-          font-weight: 600;
-          color: #374151;
-          margin-bottom: 10px;
-          font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-        .form-field input {
-          width: 100%;
-          padding: 16px 18px;
+          height: 52px;
+          padding: 0 20px;
           font-size: 16px;
           font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
           border: 1px solid #d1d5db;
-          border-radius: 12px;
-          background: #fff;
+          border-radius: 50px;
+          background: #f9fafb;
           color: #1f2937;
           transition: all 0.2s ease;
           box-sizing: border-box;
+          text-align: right;
         }
-        .form-field input::placeholder {
+        .form-input::placeholder {
           color: #9ca3af;
         }
-        .form-field input:focus {
+        .form-input:focus {
           outline: none;
           border-color: #0d9488;
           box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+          background: #fff;
         }
         .submit-btn {
-          padding: 18px 32px;
-          font-size: 18px;
+          height: 52px;
+          padding: 0 36px;
+          font-size: 17px;
           font-weight: 700;
           font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
           background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
@@ -193,16 +176,22 @@ export default function ContactForm() {
         @media (max-width: 768px) {
           .contact-form-wrapper {
             max-width: 90%;
-            padding: 32px 24px;
+            padding: 28px 24px;
             margin: 32px 16px 0;
             border-radius: 20px;
           }
           .form-row {
             flex-direction: column;
           }
+          .form-input {
+            height: 52px;
+            border-radius: 14px;
+          }
           .submit-btn {
+            height: 52px;
             width: 100%;
-            margin-top: 8px;
+            border-radius: 14px;
+            margin-top: 4px;
           }
         }
       `}</style>
