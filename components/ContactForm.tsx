@@ -1,178 +1,211 @@
+"use client";
+
+import { useState } from "react";
+
 export default function ContactForm() {
-  const zohoFormHtml = `
-<div class="contact-form-wrapper" dir="rtl" style="max-width: 65%; margin: 48px auto 0; padding: 48px; background: white; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
-  <h3 style="margin: 0 0 36px 0; font-size: 28px; font-weight: 700; color: #1f2937; text-align: center; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;">יצירת קשר</h3>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js'></script>
-  <style>
-    .contact-form-wrapper .wf_customMessageBox{font-family: Arial, Helvetica, sans-serif;color: #132C14;background: #F5FAF5;box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);max-width: 90%;width: max-content;word-break: break-word;z-index: 11000;border-radius: 6px;border: 1px solid #A9D3AB;min-width: 100px;padding: 10px 15px;display: flex;align-items: center;position: fixed;top: 20px;left: 50%;transform: translate(-50%, 0);direction: rtl;}
-    .contact-form-wrapper .wf_customCircle{position: relative;background-color: #12AA67;border-radius: 100%;width: 20px;height: 20px;flex: none;margin-right: 7px;}
-    .contact-form-wrapper .wf_customCheckMark{box-sizing: unset !important;position: absolute;transform: rotate(45deg)translate(-50%, -50%);left: 6px;top: 9px;height: 8px;width: 3px;border-bottom: 2px solid #fff;border-right: 2px solid #fff;}
-    .contact-form-wrapper .wf_customClose{box-sizing: border-box;position: relative;width: 18px;height: 18px;}
-    .contact-form-wrapper .wf_customClose::after,.contact-form-wrapper .wf_customClose::before{content: '';display: block;box-sizing: border-box;position: absolute;width: 12px;height: 1.5px;background: #616E88;transform: rotate(45deg);border-radius: 5px;top: 8px;left}
-    .contact-form-wrapper .wf_customClose::after{transform: rotate(-45deg)}
-    
-    /* RTL & Layout */
-    .contact-form-wrapper{direction: rtl !important; text-align: right !important;}
-    .contact-form-wrapper *{direction: rtl !important;}
-    .contact-form-wrapper #crmWebToEntityForm{text-align: right !important;}
-    .contact-form-wrapper #crmWebToEntityForm *{direction: rtl !important;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_title{display: none !important;}
-    
-    /* Field Layout - Stacked */
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_row{margin: 24px 0; display: flex; flex-direction: column;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_lab{width: 100% !important; float: none !important; margin: 0 0 10px 0; padding: 0 !important; text-align: right;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_lab label{font-size: 15px; font-weight: 600; color: #374151; font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld{width: 100% !important; float: none !important; padding: 0 !important; margin: 0 !important;}
-    
-    /* Modern Input Styles */
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=text],
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=email],
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea{
-      width: 100% !important; 
-      float: none !important; 
-      border: 1px solid #d1d5db !important; 
-      border-radius: 12px !important; 
-      padding: 16px 18px !important; 
-      font-size: 16px !important; 
-      font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif !important; 
-      background: #fff !important; 
-      transition: all 0.2s ease !important; 
-      box-sizing: border-box !important;
-      color: #1f2937 !important;
-    }
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=text]::placeholder,
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=email]::placeholder,
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea::placeholder{
-      color: #9ca3af !important;
-    }
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=text]:focus,
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=email]:focus,
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea:focus{
-      outline: none !important; 
-      border-color: #0d9488 !important; 
-      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important;
-    }
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld textarea{min-height: 140px; resize: vertical;}
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_help{display: none !important;}
-    
-    /* Submit Button - Match CTA */
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld .formsubmit.zcwf_button{
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 18px 32px !important;
-      font-size: 18px !important;
-      font-weight: 700 !important;
-      font-family: 'Heebo', -apple-system, BlinkMacSystemFont, sans-serif !important;
-      background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%) !important;
-      color: white !important;
-      border: none !important;
-      border-radius: 50px !important;
-      cursor: pointer !important;
-      transition: all 0.3s ease !important;
-      text-align: center !important;
-      margin-top: 16px !important;
-      box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25) !important;
-    }
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld .formsubmit.zcwf_button:hover{
-      background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%) !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 8px 24px rgba(13, 148, 136, 0.35) !important;
-    }
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld .formsubmit.zcwf_button:disabled{
-      background: #9ca3af !important;
-      cursor: not-allowed !important;
-      transform: none !important;
-      box-shadow: none !important;
-    }
-    
-    /* Hide reset and hidden fields */
-    .contact-form-wrapper .zcwf_lblLeft .zcwf_col_fld input[type=reset]{display: none !important;}
-    .contact-form-wrapper .wfrm_fld_dpNn{display: none !important;}
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .contact-form-wrapper{
-        max-width: 90% !important;
-        padding: 32px 24px !important;
-        margin: 32px 16px 0 !important;
-        border-radius: 20px !important;
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    phone: "",
+  });
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch("/api/v1/public/contact-lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ full_name: "", email: "", phone: "" });
+      } else {
+        setStatus("error");
       }
-      .contact-form-wrapper h3{font-size: 24px !important; margin-bottom: 28px !important;}
-      .contact-form-wrapper .zcwf_lblLeft .zcwf_row{margin: 20px 0 !important;}
+    } catch (error) {
+      setStatus("error");
     }
-  </style>
-  <div class='wf_customMessageBox' id='wf_splash' style='display:none'>
-    <div class='wf_customCircle'><div class='wf_customCheckMark'></div></div>
-    <span id='wf_splash_info'></span>
-  </div>
-  <form id='webform4583015000000689066' name='WebToLeads4583015000000689066' accept-charset='UTF-8'>
-    <input type='text' style='display:none;' name='xnQsjsdp' value='aeb2a0088650c88412cef1a97bcb10cb4852db23477cede8466da0921117cd40'>
-    <input type='hidden' name='zc_gad' id='zc_gad' value=''>
-    <input type='text' style='display:none;' name='xmIwtLD' value='4fff1be45a541a39333585adc2833b0dd6f78c877e75caaabb752866d7fc13be636b93311c7d1cc155df2dd234df6b05'>
-    <input type='text' style='display:none;' name='actionType' value='TGVhZHM='>
-    <input type='text' style='display:none;' name='returnURL' value='null'>
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Last_Name'>שם מלא <span style='color:red;'>*</span></label></div>
-      <div class='zcwf_col_fld'><input type='text' id='contact-full-name' aria-required='true' aria-label='שם מלא' name='Last Name' aria-valuemax='80' maxlength='80'></div>
-    </div>
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Email'>דוא"ל <span style='color:red;'>*</span></label></div>
-      <div class='zcwf_col_fld'><input type='text' ftype='email' autocomplete='false' id='Email' aria-required='true' aria-label='דוא"ל' name='Email' aria-valuemax='100' crmlabel='' maxlength='100'></div>
-    </div>
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Phone'>טלפון</label></div>
-      <div class='zcwf_col_fld'><input type='text' id='Phone' aria-required='false' aria-label='טלפון' name='Phone' aria-valuemax='30' maxlength='30'></div>
-    </div>
-    <div class='zcwf_row wfrm_fld_dpNn'>
-      <div class='zcwf_col_lab'><label for='Lead_Source'>Lead Source</label></div>
-      <div class='zcwf_col_fld'>
-        <select class='zcwf_col_fld_slt' role='combobox' aria-expanded='false' aria-haspopup='listbox' id='Lead_Source' onchange='addAriaSelected4583015000000689066()' aria-required='false' aria-label='Lead Source' name='Lead Source'>
-          <option value='-None-'>-None-</option>
-          <option value='פרסום'>פרסום</option>
-          <option value='קישור הקרה'>קישור הקרה</option>
-          <option value='הפנייה עובד'>הפנייה עובד</option>
-          <option value='הפנייה חינוכית'>הפנייה חינוכית</option>
-          <option value='חנות מקוונת'>חנות מקוונת</option>
-          <option value='שיתופי פעולה'>שיתופי פעולה</option>
-          <option value='יחסי ציבור'>יחסי ציבור</option>
-          <option value='כנסים'>כנסים</option>
-          <option value='דירוג מנוע חיפוש'>דירוג מנוע חיפוש</option>
-          <option value='בלוג'>בלוג</option>
-          <option value='פייסבוק'>פייסבוק</option>
-          <option value='לינקדאין'>לינקדאין</option>
-          <option value='טוויטר'>טוויטר</option>
-          <option value='מחקר מקורי'>מחקר מקורי</option>
-          <option value='וידאו'>וידאו</option>
-          <option value='ציטוט'>ציטוט</option>
-          <option selected value='אתר'>אתר</option>
-          <option value='Online Store'>Online Store</option>
-        </select>
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  if (status === "success") {
+    return (
+      <div className="contact-form-wrapper" dir="rtl">
+        <div className="success-message">
+          <svg className="w-16 h-16 text-teal-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h3 className="text-xl font-bold text-gray-800 mb-2">תודה!</h3>
+          <p className="text-gray-600">ההודעה נשלחה בהצלחה. נחזור אליכם בהקדם.</p>
+          <button
+            onClick={() => setStatus("idle")}
+            className="mt-6 text-teal-600 hover:text-teal-700 font-medium"
+          >
+            שליחת הודעה נוספת
+          </button>
+        </div>
       </div>
-    </div>
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'><label for='Description'>הודעה</label></div>
-      <div class='zcwf_col_fld'><textarea aria-multiline='true' id='Description' aria-required='false' aria-label='הודעה' name='Description'></textarea></div>
-    </div>
-    <input type='text' type='hidden' style='display: none;' name='aG9uZXlwb3Q' value='' />
-    <div class='zcwf_row'>
-      <div class='zcwf_col_lab'></div>
-      <div class='zcwf_col_fld'>
-        <input type='submit' id='formsubmit' role='button' class='formsubmit zcwf_button' value='שליחה' aria-label='שליחה' title='שליחה'>
-      </div>
-    </div>
-    <script>
-      function addAriaSelected4583015000000689066(){var optionElem=event.target;var previousSelectedOption=optionElem.querySelector('[aria-selected=true]');if(previousSelectedOption){previousSelectedOption.removeAttribute('aria-selected');}optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected='true';}
-      function validateEmail4583015000000689066(){var form=document.forms['WebToLeads4583015000000689066'];var emailFld=form.querySelectorAll('[ftype=email]');var i;for(i=0;i<emailFld.length;i++){var emailVal=emailFld[i].value;if((emailVal.replace(/^\\s+|\\s+$/g,'')).length!=0){var atpos=emailVal.indexOf('@');var dotpos=emailVal.lastIndexOf('.');if(atpos<1||dotpos<atpos+2||dotpos+2>=emailVal.length){alert('Please enter a valid email address. ');emailFld[i].focus();return false;}}}return true;}
-      function checkMandatory4583015000000689066(){var mndFileds=new Array('Last Name','Email');var fldLangVal=new Array('שם מלא','דוא"ל');for(i=0;i<mndFileds.length;i++){var fieldObj=document.forms['WebToLeads4583015000000689066'][mndFileds[i]];if(fieldObj){if(((fieldObj.value).replace(/^\\s+|\\s+$/g,'')).length==0){if(fieldObj.type=='file'){alert('Please select a file to upload.');fieldObj.focus();return false;}alert(fldLangVal[i]+' השדה הינו חובה');fieldObj.focus();return false;}else if(fieldObj.nodeName=='SELECT'){if(fieldObj.options[fieldObj.selectedIndex].value=='-None-'){alert(fldLangVal[i]+' cannot be none.');fieldObj.focus();return false;}}else if(fieldObj.type=='checkbox'){if(fieldObj.checked==false){alert('Please accept '+fldLangVal[i]);fieldObj.focus();return false;}}try{if(fieldObj.name=='Last Name'){name=fieldObj.value;}}catch(e){}}}if(!validateEmail4583015000000689066()){return false;}var urlparams=new URLSearchParams(window.location.search);if(urlparams.has('service')&&(urlparams.get('service')==='smarturl')){var webform=document.getElementById('webform4583015000000689066');var service=urlparams.get('service');var smarturlfield=document.createElement('input');smarturlfield.setAttribute('type','hidden');smarturlfield.setAttribute('value',service);smarturlfield.setAttribute('name','service');webform.appendChild(smarturlfield);}document.querySelector('.crmWebToEntityForm .formsubmit').setAttribute('disabled',true);return true;}
-      $(document).ready(function(){$('#webform4583015000000689066').submit(function(e){var ismandatory=checkMandatory4583015000000689066();e.preventDefault();if(ismandatory){if(typeof _wfa_track!='undefined'&&_wfa_track.wfa_submit){_wfa_track.wfa_submit(e);}var formData=new FormData(this);$.ajax({url:'https://crm.zoho.com/crm/WebToLeadForm',type:'POST',data:formData,cache:false,contentType:false,processData:false,success:function(data){var splashinfodom=document.getElementById('wf_splash_info');splashinfodom.innerText='תודה! ההודעה נשלחה בהצלחה';var splashdom=document.getElementById('wf_splash');document.getElementById('webform4583015000000689066').reset.click();splashdom.style.display='';setTimeout(function(){splashdom.style.display='none';},5000);document.querySelector('.crmWebToEntityForm .formsubmit').removeAttribute('disabled');},error:function(data){alert('אירעה שגיאה, נסה שוב מאוחר יותר');}});}});});
-      function tooltipShow4583015000000689066(el){var tooltip=el.nextElementSibling;var tooltipDisplay=tooltip.style.display;if(tooltipDisplay=='none'){var allTooltip=document.getElementsByClassName('zcwf_tooltip_over');for(i=0;i<allTooltip.length;i++){allTooltip[i].style.display='none';}tooltip.style.display='block';}else{tooltip.style.display='none';}}
-    </script>
-  </form>
-</div>
-`;
+    );
+  }
 
   return (
-    <div dangerouslySetInnerHTML={{ __html: zohoFormHtml }} />
+    <form onSubmit={handleSubmit} className="contact-form-wrapper" dir="rtl">
+      <div className="form-row">
+        <div className="form-field">
+          <label htmlFor="full_name">שם מלא</label>
+          <input
+            type="text"
+            id="full_name"
+            name="full_name"
+            value={formData.full_name}
+            onChange={handleChange}
+            required
+            placeholder=""
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="email">אימייל</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder=""
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="phone">טלפון</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder=""
+          />
+        </div>
+        <button
+          type="submit"
+          disabled={status === "loading"}
+          className="submit-btn"
+        >
+          {status === "loading" ? "שולח..." : "שליחה"}
+        </button>
+      </div>
+      {status === "error" && (
+        <p className="error-message">אירעה שגיאה. נסו שוב מאוחר יותר.</p>
+      )}
+
+      <style jsx>{`
+        .contact-form-wrapper {
+          max-width: 65%;
+          margin: 48px auto 0;
+          padding: 48px;
+          background: white;
+          border-radius: 24px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        .form-row {
+          display: flex;
+          gap: 16px;
+          align-items: flex-end;
+        }
+        .form-field {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+        .form-field label {
+          font-size: 15px;
+          font-weight: 600;
+          color: #374151;
+          margin-bottom: 10px;
+          font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .form-field input {
+          width: 100%;
+          padding: 16px 18px;
+          font-size: 16px;
+          font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
+          border: 1px solid #d1d5db;
+          border-radius: 12px;
+          background: #fff;
+          color: #1f2937;
+          transition: all 0.2s ease;
+          box-sizing: border-box;
+        }
+        .form-field input::placeholder {
+          color: #9ca3af;
+        }
+        .form-field input:focus {
+          outline: none;
+          border-color: #0d9488;
+          box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+        }
+        .submit-btn {
+          padding: 18px 32px;
+          font-size: 18px;
+          font-weight: 700;
+          font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
+          background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+          color: white;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
+          white-space: nowrap;
+        }
+        .submit-btn:hover:not(:disabled) {
+          background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(13, 148, 136, 0.35);
+        }
+        .submit-btn:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+        .error-message {
+          margin-top: 16px;
+          text-align: center;
+          color: #ef4444;
+          font-size: 14px;
+        }
+        .success-message {
+          text-align: center;
+          padding: 40px 20px;
+        }
+        @media (max-width: 768px) {
+          .contact-form-wrapper {
+            max-width: 90%;
+            padding: 32px 24px;
+            margin: 32px 16px 0;
+            border-radius: 20px;
+          }
+          .form-row {
+            flex-direction: column;
+          }
+          .submit-btn {
+            width: 100%;
+            margin-top: 8px;
+          }
+        }
+      `}</style>
+    </form>
   );
 }
