@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ export default function ContactForm() {
     phone: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const firstInputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,22 +42,89 @@ export default function ContactForm() {
     }));
   };
 
+  const handleResetForm = () => {
+    setStatus("idle");
+    setTimeout(() => {
+      firstInputRef.current?.focus();
+      const formWrapper = document.querySelector(".contact-form-wrapper");
+      formWrapper?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+  };
+
   if (status === "success") {
     return (
       <div className="contact-form-wrapper" dir="rtl">
         <div className="success-message">
-          <svg className="w-16 h-16 text-teal-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <h3 className="text-xl font-bold text-gray-800 mb-2">תודה!</h3>
-          <p className="text-gray-600">ההודעה נשלחה בהצלחה. נחזור אליכם בהקדם.</p>
+          <div className="success-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 className="success-title">תודה!</h2>
+          <p className="success-subtitle">ההודעה נשלחה בהצלחה. נחזור אליכם בהקדם.</p>
           <button
-            onClick={() => setStatus("idle")}
-            className="mt-6 text-teal-600 hover:text-teal-700 font-medium"
+            onClick={handleResetForm}
+            className="reset-link"
           >
             שליחת הודעה נוספת
           </button>
         </div>
+
+        <style jsx>{`
+          .success-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            text-align: center;
+          }
+          .success-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(13, 148, 136, 0.35);
+          }
+          .success-icon svg {
+            width: 36px;
+            height: 36px;
+            color: white;
+          }
+          .success-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin: 0 0 12px 0;
+            font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
+          }
+          .success-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0 0 28px 0;
+            font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
+          }
+          .reset-link {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #5eead4;
+            cursor: pointer;
+            font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
+            transition: all 0.2s ease;
+            padding: 8px 16px;
+            border-radius: 8px;
+          }
+          .reset-link:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+          }
+        `}</style>
       </div>
     );
   }
@@ -65,6 +133,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="contact-form-wrapper" dir="rtl">
       <div className="form-row">
         <input
+          ref={firstInputRef}
           type="text"
           name="full_name"
           value={formData.full_name}
@@ -168,10 +237,6 @@ export default function ContactForm() {
           text-align: center;
           color: #ef4444;
           font-size: 14px;
-        }
-        .success-message {
-          text-align: center;
-          padding: 40px 20px;
         }
         @media (max-width: 768px) {
           .contact-form-wrapper {
