@@ -53,7 +53,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="contact-form-wrapper" dir="rtl">
+      <div className="contact-form-wrapper" dir="rtl" id="pilot-contact">
         <div className="success-message">
           <div className="success-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -130,7 +130,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="contact-form-wrapper" dir="rtl">
+    <form onSubmit={handleSubmit} className="contact-form-wrapper" dir="rtl" id="pilot-contact">
       <div className="form-row">
         <input
           ref={firstInputRef}
@@ -140,6 +140,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           placeholder="שם מלא"
+          id="pilot-full-name"
           className="form-input"
         />
         <input

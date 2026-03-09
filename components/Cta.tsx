@@ -4,18 +4,15 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Cta() {
   const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-      setTimeout(() => {
-        const nameInput = document.getElementById("contact-full-name");
-        nameInput?.focus();
-      }, 500);
-    }
+    const form = document.getElementById("pilot-contact");
+    form?.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => {
+      (document.getElementById("pilot-full-name") as HTMLInputElement | null)?.focus();
+    }, 400);
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden py-24 px-6">
+    <section className="relative overflow-hidden py-24 px-6">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-900 to-teal-800" />
       
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-teal-400/20 rounded-full blur-3xl" />
