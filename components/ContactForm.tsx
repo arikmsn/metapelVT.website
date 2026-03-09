@@ -62,15 +62,15 @@ export default function ContactForm() {
           </div>
           <h2 className="success-title">תודה!</h2>
           <p className="success-subtitle">ההודעה נשלחה בהצלחה. נחזור אליכם בהקדם.</p>
-          <button
-            onClick={handleResetForm}
-            className="reset-link"
-          >
+          <button onClick={handleResetForm} className="reset-link">
             שליחת הודעה נוספת
           </button>
         </div>
 
         <style jsx>{`
+          .contact-form-wrapper {
+            margin-top: 40px;
+          }
           .success-message {
             display: flex;
             flex-direction: column;
@@ -173,40 +173,39 @@ export default function ContactForm() {
 
       <style jsx>{`
         .contact-form-wrapper {
-          max-width: 65%;
-          margin: 48px auto 0;
-          padding: 40px 48px;
-          background: white;
-          border-radius: 24px;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+          margin-top: 40px;
         }
         .form-row {
           display: flex;
           gap: 12px;
           align-items: stretch;
+          justify-content: center;
+          max-width: 900px;
+          margin: 0 auto;
         }
         .form-input {
           flex: 1;
+          max-width: 200px;
           height: 52px;
           padding: 0 20px;
           font-size: 16px;
           font-family: "Heebo", -apple-system, BlinkMacSystemFont, sans-serif;
-          border: 1px solid #d1d5db;
+          border: 1px solid rgba(255, 255, 255, 0.3);
           border-radius: 50px;
-          background: #f9fafb;
-          color: #1f2937;
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
           transition: all 0.2s ease;
           box-sizing: border-box;
           text-align: right;
         }
         .form-input::placeholder {
-          color: #9ca3af;
+          color: rgba(255, 255, 255, 0.6);
         }
         .form-input:focus {
           outline: none;
-          border-color: #0d9488;
-          box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
-          background: #fff;
+          border-color: #5eead4;
+          background: rgba(255, 255, 255, 0.15);
+          box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.15);
         }
         .submit-btn {
           height: 52px;
@@ -235,22 +234,19 @@ export default function ContactForm() {
         .error-message {
           margin-top: 16px;
           text-align: center;
-          color: #ef4444;
+          color: #fca5a5;
           font-size: 14px;
         }
         @media (max-width: 768px) {
-          .contact-form-wrapper {
-            max-width: 90%;
-            padding: 28px 24px;
-            margin: 32px 16px 0;
-            border-radius: 20px;
-          }
           .form-row {
             flex-direction: column;
+            max-width: 320px;
           }
           .form-input {
+            max-width: 100%;
             height: 52px;
             border-radius: 14px;
+            background: rgba(255, 255, 255, 0.15);
           }
           .submit-btn {
             height: 52px;
