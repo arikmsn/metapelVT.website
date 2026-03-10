@@ -20,7 +20,7 @@ export default function ForWhom() {
           {heContent.forWhom.title}
         </h2>
         <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12 animate-on-scroll delay-1">
-          המערכת מתאימה לכל סוגי אנשי המקצוע שמלווים אנשים בתהליך
+          {heContent.forWhom.subtitle}
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {heContent.forWhom.items.map((item, index) => (

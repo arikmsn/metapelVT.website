@@ -38,8 +38,11 @@ export default function Cta() {
           onClick={scrollToContact}
           className="bg-teal-400 text-indigo-950 font-bold px-8 py-4 rounded-full text-lg hover:bg-teal-300 transition-colors cursor-pointer"
         >
-          הצטרפות לפיילוט חינם
+          התחילו עכשיו
         </button>
+        <p className="text-white/60 text-sm mt-3">
+          10 מטופלים ראשונים – לגמרי בחינם, בלי כרטיס אשראי
+        </p>
         
         <ContactForm />
       </div>

@@ -68,13 +68,13 @@ export default function Header() {
               onClick={scrollToPilotForm}
               className="bg-teal-400 text-indigo-950 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-teal-300 transition-colors cursor-pointer"
             >
-              הצטרפות לפיילוט חינם
+              התחילו עכשיו
             </button>
             <a
               href="https://app.metapel.online"
               className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
             >
-              כניסה למערכת
+              כניסה
             </a>
           </div>
 

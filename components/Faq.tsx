@@ -13,7 +13,7 @@ export default function Faq() {
           {heContent.faq.title}
         </h2>
         <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-12 animate-on-scroll delay-1">
-          תשובות לשאלות נפוצות על המערכת
+          {heContent.faq.subtitle}
         </p>
 
         <div className="max-w-2xl mx-auto space-y-4">

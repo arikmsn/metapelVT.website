@@ -32,12 +32,13 @@ export default function Hero() {
                 {heContent.hero.primaryCta}
               </a>
               <a
-                href="mailto:info@metapel.online"
+                href="https://app.metapel.online"
                 className="bg-white/10 border border-white/30 text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] sm:min-h-[56px] rounded-xl inline-flex items-center justify-center transition-all duration-300 hover:bg-white/20"
               >
                 {heContent.hero.secondaryCta}
               </a>
             </div>
+            <p className="text-white/60 text-sm mt-4 animate-fade-up delay-300">ללא כרטיס אשראי · חינם עד 10 מטופלים</p>
           </div>
 
           <div className="flex-1 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl order-2 lg:order-2 mt-4 lg:mt-0 animate-scale-in">

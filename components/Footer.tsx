@@ -21,7 +21,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/70 max-w-sm leading-relaxed">
-              מערכת חכמה לניהול וליווי מטופלים. כל התהליך הטיפולי במקום אחד.
+              {heContent.footer.tagline}
             </p>
           </div>
           

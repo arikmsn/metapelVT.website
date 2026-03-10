@@ -4,9 +4,12 @@ export default function HowItWorks() {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center mb-10 md:mb-14">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center mb-3">
           {heContent.howItWorks.title}
         </h2>
+        <p className="text-lg text-text-secondary text-center max-w-2xl mx-auto mb-10 md:mb-14">
+          {heContent.howItWorks.subtitle}
+        </p>
 
         <div className="max-w-4xl mx-auto">
           <div className="relative">
