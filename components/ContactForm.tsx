@@ -214,6 +214,8 @@ export default function ContactForm() {
           transition: all 0.2s ease;
           box-sizing: border-box;
           text-align: right;
+          display: flex;
+          align-items: center;
         }
         .form-input::placeholder {
           color: rgba(255, 255, 255, 0.6);
@@ -255,21 +257,37 @@ export default function ContactForm() {
           font-size: 14px;
         }
         @media (max-width: 768px) {
+          .contact-form-wrapper {
+            padding: 24px 16px;
+            margin-top: 32px;
+          }
           .form-row {
             flex-direction: column;
-            max-width: 320px;
+            max-width: 100%;
+            gap: 12px;
           }
           .form-input {
             max-width: 100%;
-            height: 52px;
+            width: 100%;
+            min-height: 52px;
+            height: auto;
+            padding: 12px 16px;
+            font-size: 16px;
             border-radius: 14px;
             background: rgba(255, 255, 255, 0.15);
+            margin-top: 8px;
+          }
+          .form-input:first-child {
+            margin-top: 0;
           }
           .submit-btn {
-            height: 52px;
+            min-height: 52px;
+            height: auto;
             width: 100%;
+            padding: 14px 24px;
+            font-size: 16px;
             border-radius: 14px;
-            margin-top: 4px;
+            margin-top: 12px;
           }
         }
       `}</style>
