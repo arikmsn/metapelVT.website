@@ -24,18 +24,6 @@ export default function Header() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  const scrollToPilotForm = () => {
-    trackEvent("cta_click", {
-      event_category: "contact",
-      event_label: "pilot_cta",
-    });
-    const form = document.getElementById("pilot-contact");
-    form?.scrollIntoView({ behavior: "smooth", block: "center" });
-    setTimeout(() => {
-      (document.getElementById("pilot-full-name") as HTMLInputElement | null)?.focus();
-    }, 400);
-  };
-
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 ${isMenuOpen ? "transition-none" : "transition-all duration-300"} ${isMenuOpen || scrolled 
@@ -64,17 +52,17 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={scrollToPilotForm}
+            <a
+              href="https://app.metapel.online/register"
               className="bg-teal-400 text-indigo-950 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-teal-300 transition-colors cursor-pointer"
             >
               התחילו בחינם ←
-            </button>
+            </a>
             <a
-              href="https://app.metapel.online"
+              href="https://app.metapel.online/login"
               className="text-text-secondary hover:text-primary text-sm font-medium transition-colors"
             >
-              כניסה
+              כניסת משתמשים
             </a>
           </div>
 
@@ -97,13 +85,13 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-2">
-            <a href="#features-tabs" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">תכונות</a>
             <a href="#how-it-works" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">איך זה עובד</a>
+            <a href="#features-tabs" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">תכונות</a>
             <a href="#testimonials" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">המלצות</a>
             <a href="#faq" onClick={closeMenu} className="text-base font-medium text-gray-700 hover:text-teal-600 transition-colors py-3 border-b border-gray-100 text-right">שאלות</a>
             <div className="flex flex-col gap-3 pt-4">
-              <button onClick={() => { closeMenu(); scrollToPilotForm(); }} className="bg-teal-500 text-white font-semibold text-center text-base py-3 rounded-xl hover:bg-teal-400 transition-colors cursor-pointer">הצטרפות לפיילוט חינם</button>
-              <a href="https://app.metapel.online/" className="border border-teal-500 text-teal-600 font-semibold text-center text-base py-3 rounded-xl hover:bg-teal-50 transition-colors">כניסה למערכת</a>
+              <a href="https://app.metapel.online/register" onClick={closeMenu} className="bg-teal-500 text-white font-semibold text-center text-base py-3 rounded-xl hover:bg-teal-400 transition-colors cursor-pointer">התחילו בחינם ←</a>
+              <a href="https://app.metapel.online/login" className="border border-teal-500 text-teal-600 font-semibold text-center text-base py-3 rounded-xl hover:bg-teal-50 transition-colors">כניסת משתמשים</a>
             </div>
           </div>
         </div>

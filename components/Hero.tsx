@@ -26,13 +26,13 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-fade-up delay-200">
               <a
-                href="https://app.metapel.online"
+                href="https://app.metapel.online/register"
                 className="bg-teal-400 text-indigo-950 font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] sm:min-h-[56px] rounded-xl inline-flex items-center justify-center transition-all duration-300 hover:bg-teal-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-teal-400/25"
               >
                 {heContent.hero.primaryCta}
               </a>
               <a
-                href="https://app.metapel.online"
+                href="https://app.metapel.online/login"
                 className="bg-white/10 border border-white/30 text-white text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] sm:min-h-[56px] rounded-xl inline-flex items-center justify-center transition-all duration-300 hover:bg-white/20"
               >
                 {heContent.hero.secondaryCta}
