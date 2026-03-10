@@ -3,7 +3,7 @@ export default function Pricing() {
     <section id="pricing" className="section-padding bg-background-alt border-t border-border">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-on-scroll">
-          בחרו את המסלול המתאים לכם
+          התחילו בחינם, גדלו בקצב שלכם
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch">
