@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,6 +14,14 @@ const trackEvent = (name: string, params?: Record<string, unknown>) => {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // On the home page the hero provides a dark background so the header starts
+  // transparent. On every other page (e.g. /terms) there is no dark hero, so
+  // we show the purple gradient immediately from first paint.
+  const isHome = pathname === "/";
+  // "transparent marketing" mode: only on home page before scrolling (hero is behind the header).
+  const transparentMode = isHome && !scrolled && !isMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +34,13 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 ${isMenuOpen ? "transition-none" : "transition-all duration-300"} ${isMenuOpen || scrolled 
-        ? "bg-white shadow-sm border-b border-gray-100" 
-        : "bg-transparent"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 ${isMenuOpen ? "transition-none" : "transition-all duration-300"} ${
+        isMenuOpen || scrolled
+          ? "bg-white shadow-sm border-b border-gray-100"
+          : transparentMode
+          ? "bg-transparent"
+          : "bg-gradient-to-br from-indigo-950 via-purple-900 to-teal-800"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -43,7 +55,7 @@ export default function Header() {
               priority
             />
           </Link>
-          
+
           <nav className="hidden md:flex items-center gap-8">
             <a href="#how-it-works" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>איך זה עובד</a>
             <a href="#features-tabs" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>תכונות</a>
