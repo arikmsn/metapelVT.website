@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-4">צור קשר</h4>
+            <h4 className="text-white font-semibold mb-4">דברו איתנו</h4>
             <ul className="space-y-3">
               <li>
                 <a href="mailto:info@metapel.online" className="text-white/60 hover:text-white transition-colors">

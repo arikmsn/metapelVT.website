@@ -110,7 +110,7 @@ export default function Pricing() {
           <div className="card card-hover group bg-white rounded-2xl border border-border p-6 md:p-8 flex flex-col h-full">
             <h3 className="text-xl font-semibold text-primary mb-4 text-center">קליניקות וארגונים</h3>
             <div className="text-center mb-6">
-              <span className="text-5xl font-bold text-primary">מותאם לכם</span>
+              <span className="text-5xl font-bold text-primary whitespace-nowrap">מותאם לכם</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-center gap-3 text-text-secondary text-base">
