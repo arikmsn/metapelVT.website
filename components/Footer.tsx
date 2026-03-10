@@ -50,6 +50,9 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <TermsModal />
+            <Link href="/terms" className="text-white/60 hover:text-white text-sm transition-colors duration-200">
+              תנאי שימוש ומדיניות פרטיות
+            </Link>
           </div>
 
           <p className="text-white/40 text-sm">
