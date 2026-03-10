@@ -21,7 +21,7 @@ const steps = [
   },
   {
     title: "הבינה המלאכותית עובדת בשבילכם",
-    description: "אחרי כל פגישה מזינים כמה נקודות קצרות, המערכת מייצרת סיכום מסודר, משימות ותזכורות.",
+    description: "אחרי כל פגישה מקליטים כמה נקודות קצרות, והמערכת מייצרת סיכום מסודר, משימות ותכנית טיפולית מלאה.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

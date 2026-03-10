@@ -29,10 +29,10 @@ export default function Cta() {
       
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-          רוצים להתחיל אבל מעוניינים בהדגמה קודם?
+          רוצים להתחיל אבל מעוניינים בהדגמה?
         </h2>
         <p className="text-white/75 text-lg mb-6">
-          הצטרפו למטפלים שכבר חוסכים שעות בשבוע, ומרגישים את ההבדל כבר אחרי מספר פגישות.
+          הצטרפו והתחילו לחסוך שעות בשבוע, ולהרגיש את ההבדל תוך מספר פגישות.
         </p>
         <button 
           onClick={scrollToContact}
