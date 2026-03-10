@@ -46,9 +46,12 @@ export default function Pricing() {
               </li>
             </ul>
             <div className="mt-auto">
-              <div className="bg-gray-100 text-gray-600 font-bold text-center py-3 px-6 rounded-xl text-lg">
-                חינם לתמיד
-              </div>
+              <a
+                href="https://app.metapel.online/register"
+                className="block border-2 border-primary text-primary font-bold text-center py-3 px-6 rounded-xl hover:bg-primary/5 transition-colors text-lg"
+              >
+                הרשמה
+              </a>
             </div>
           </div>
 
