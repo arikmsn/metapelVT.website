@@ -181,7 +181,7 @@ export default function ContactForm() {
             }
           }}
         >
-          {status === "loading" ? "שולח..." : "שליחה"}
+          {status === "loading" ? "שולח..." : "שליחה ←"}
         </button>
       </div>
       {status === "error" && (
