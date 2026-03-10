@@ -18,8 +18,8 @@ export default function Home() {
       <FeatureTabs />
       <SocialProof />
       <Security />
-      <Faq />
       <Pricing />
+      <Faq />
       <Cta />
       <Footer />
     </main>
