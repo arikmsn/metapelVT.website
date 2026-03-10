@@ -57,8 +57,8 @@ export default function Header() {
           </Link>
           
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features-tabs" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>תכונות</a>
             <a href="#how-it-works" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>איך זה עובד</a>
+            <a href="#features-tabs" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>תכונות</a>
             <a href="#testimonials" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>המלצות</a>
             <a href="#faq" className={`text-sm font-medium transition-colors ${scrolled ? "text-text-secondary hover:text-primary" : "text-white/90 hover:text-white"}`}>שאלות</a>
           </nav>
@@ -68,7 +68,7 @@ export default function Header() {
               onClick={scrollToPilotForm}
               className="bg-teal-400 text-indigo-950 font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-teal-300 transition-colors cursor-pointer"
             >
-              התחילו עכשיו
+              התחילו בחינם ←
             </button>
             <a
               href="https://app.metapel.online"
