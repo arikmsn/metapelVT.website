@@ -60,10 +60,10 @@ export default function Pricing() {
               </span>
             </div>
             <h3 className="text-xl font-semibold text-white mb-4 text-center mt-2">לעבודה שוטפת</h3>
-            <div className="text-center mb-6">
+            <div className="text-center mb-6 flex items-baseline justify-center gap-1">
               <span className="text-5xl font-bold text-white">149</span>
               <span className="text-white/80 text-lg"> ש&quot;ח </span>
-              <span className="text-white/60 text-sm block mt-1">לחודש</span>
+              <span className="text-white/60 text-sm">לחודש</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-center gap-3 text-white/90 text-base">
