@@ -101,7 +101,7 @@ export default function Pricing() {
             </ul>
             <div className="mt-auto">
               <a
-                href="https://app.metapel.online/register"
+                href="https://app.metapel.online/register?plan=pro"
                 className="block bg-teal-400 text-indigo-950 font-bold text-center py-3 px-6 rounded-xl hover:bg-teal-300 transition-colors text-lg"
               >
                 התחילו בחינם ←
@@ -149,7 +149,7 @@ export default function Pricing() {
             </ul>
             <div className="mt-auto">
               <a
-                href="mailto:info@metapel.online"
+                href="mailto:info@metapel.online?subject=מעוניין בפרטים נוספים לגבי מסלול קליניקה וארגונים"
                 className="block border-2 border-primary text-primary font-bold text-center py-3 px-6 rounded-xl hover:bg-primary/5 transition-colors text-lg"
               >
                 דברו איתנו
