@@ -18,6 +18,7 @@ export default function Home() {
       <FeatureTabs />
       <SocialProof />
       <Security />
+      <div className="w-full h-1 bg-gradient-to-r from-teal-500 via-purple-500 to-teal-500 opacity-30"></div>
       <Pricing />
       <Faq />
       <Cta />

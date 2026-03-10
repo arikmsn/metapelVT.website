@@ -11,7 +11,7 @@ export default function Pricing() {
           <div className="card card-hover group bg-white rounded-2xl border border-border p-6 md:p-8 flex flex-col h-full">
             <h3 className="text-xl font-semibold text-primary mb-4 text-center">מתחילים</h3>
             <div className="text-center mb-6">
-              <span className="text-4xl font-bold text-primary">חינם</span>
+              <span className="text-5xl font-bold text-primary">חינם</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-center gap-3 text-text-secondary text-base">
@@ -62,8 +62,7 @@ export default function Pricing() {
             <h3 className="text-xl font-semibold text-white mb-4 text-center mt-2">לעבודה שוטפת</h3>
             <div className="text-center mb-6 flex items-baseline justify-center gap-1">
               <span className="text-5xl font-bold text-white">149</span>
-              <span className="text-white/80 text-lg"> ש&quot;ח </span>
-              <span className="text-white/60 text-sm">לחודש</span>
+              <span className="text-white/70 text-base"> ש&quot;ח לחודש</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-center gap-3 text-white/90 text-base">
@@ -111,7 +110,7 @@ export default function Pricing() {
           <div className="card card-hover group bg-white rounded-2xl border border-border p-6 md:p-8 flex flex-col h-full">
             <h3 className="text-xl font-semibold text-primary mb-4 text-center">קליניקות וארגונים</h3>
             <div className="text-center mb-6">
-              <span className="text-3xl font-bold text-primary">צור קשר</span>
+              <span className="text-5xl font-bold text-primary">צור קשר</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-center gap-3 text-text-secondary text-base">
