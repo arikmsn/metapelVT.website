@@ -7,7 +7,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="section-padding bg-surface">
+    <section id="faq" className="section-padding bg-surface border-t border-border">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-4 animate-on-scroll">
           {heContent.faq.title}

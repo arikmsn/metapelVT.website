@@ -1,6 +1,6 @@
 export default function Pricing() {
   return (
-    <section id="pricing" className="section-padding bg-surface border-t border-border">
+    <section id="pricing" className="section-padding bg-background-alt border-t border-border">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-on-scroll">
           בחרו את המסלול המתאים לכם
