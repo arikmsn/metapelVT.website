@@ -61,8 +61,7 @@ export default function Pricing() {
             </div>
             <h3 className="text-xl font-semibold text-white mb-4 text-center mt-2">לעבודה שוטפת</h3>
             <div className="text-center mb-6 flex items-baseline justify-center gap-1">
-              <span className="text-5xl font-bold text-white">149</span>
-              <span className="text-white/70 text-base"> ש&quot;ח לחודש</span>
+                            <span className="text-5xl font-bold text-white">149 ש&quot;ח לחודש</span>
             </div>
             <ul className="space-y-3 mb-8 flex-1">
               <li className="flex items-center gap-3 text-white/90 text-base">
