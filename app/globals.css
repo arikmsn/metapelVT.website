@@ -208,3 +208,18 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
+
+/* ─── Accessibility widget classes ───────────────────────────────────────────
+   Not active by default. Applied/removed by AccessibilityWidget.tsx only.
+   ──────────────────────────────────────────────────────────────────────────── */
+.a11y-font-large {
+  font-size: 110%;
+}
+
+.a11y-high-contrast {
+  filter: contrast(1.2);
+}
+
+.a11y-underline-links a {
+  text-decoration: underline !important;
+}

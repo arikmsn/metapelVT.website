@@ -51,6 +51,9 @@ export default function Footer() {
             <Link href="/terms" className="text-white/60 hover:text-white text-sm transition-colors duration-200">
               תנאי שימוש ומדיניות פרטיות
             </Link>
+            <Link href="/accessibility" className="text-white/60 hover:text-white text-sm transition-colors duration-200">
+              הצהרת נגישות
+            </Link>
           </div>
 
           <p className="text-white/40 text-sm">

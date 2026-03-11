@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import AccessibilityWidget from "@/components/AccessibilityWidget";
 import Script from "next/script";
 
 const softwareAppSchema = JSON.stringify({
@@ -165,6 +166,7 @@ export default function RootLayout({
         <ScrollAnimation />
         <Header />
         {children}
+        <AccessibilityWidget />
       </body>
     </html>
   );
