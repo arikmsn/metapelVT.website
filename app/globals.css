@@ -212,14 +212,39 @@ h1, h2, h3, h4, h5, h6 {
 /* ─── Accessibility widget classes ───────────────────────────────────────────
    Not active by default. Applied/removed by AccessibilityWidget.tsx only.
    ──────────────────────────────────────────────────────────────────────────── */
+
+/* 1. Font size */
 .a11y-font-large {
-  font-size: 110%;
+  font-size: 120%;
 }
 
+.a11y-font-small {
+  font-size: 90%;
+}
+
+/* 2. High contrast — explicit colors, not filter, so widget button stays visible */
 .a11y-high-contrast {
-  filter: contrast(1.2);
+  background-color: #ffffff;
+  color: #000000;
 }
 
+.a11y-high-contrast * {
+  color: #000000 !important;
+}
+
+.a11y-high-contrast a {
+  color: #0000EE !important;
+}
+
+/* Keep the widget trigger button visible and contrasted in high-contrast mode */
+.a11y-high-contrast .accessibility-widget-button {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* 3. Underline links — stronger and clearly visible */
 .a11y-underline-links a {
   text-decoration: underline !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
 }

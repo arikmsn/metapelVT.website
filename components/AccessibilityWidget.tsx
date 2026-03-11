@@ -61,7 +61,17 @@ export default function AccessibilityWidget() {
   }, [open]);
 
   const toggle = (className: string) => {
-    setActive((prev) => ({ ...prev, [className]: !prev[className] }));
+    setActive((prev) => {
+      const next = { ...prev, [className]: !prev[className] };
+      // Font size classes are mutually exclusive
+      if (className === "a11y-font-large" && next["a11y-font-large"]) {
+        next["a11y-font-small"] = false;
+      }
+      if (className === "a11y-font-small" && next["a11y-font-small"]) {
+        next["a11y-font-large"] = false;
+      }
+      return next;
+    });
   };
 
   return (
@@ -111,7 +121,7 @@ export default function AccessibilityWidget() {
         aria-label="פתח תפריט נגישות"
         aria-expanded={open}
         aria-haspopup="dialog"
-        className="flex items-center gap-2 bg-primary text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+        className="accessibility-widget-button flex items-center gap-2 bg-primary text-white text-sm font-semibold px-4 py-2.5 rounded-full shadow-lg hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
       >
         {/* Accessibility icon */}
         <svg
