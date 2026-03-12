@@ -145,6 +145,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-J8232FZW1X');
+            gtag('config', 'AW-18000196415');
             function gtagSendEvent(target) {
               var callback = function() {
                 if (target) window.location.hash = target;
